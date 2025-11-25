@@ -20,7 +20,7 @@
   ],
   "textures": [
     {
-      "name": "ground_grass",
+      "name": "grass1",
       "contentPath": "assets/textures/foliage/ground/grass1"
     },
 

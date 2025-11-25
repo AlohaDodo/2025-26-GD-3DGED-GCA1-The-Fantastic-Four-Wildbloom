@@ -88,7 +88,46 @@ namespace GDGame
             int scale = 100;
             InitializeSkyParent();
             InitializeSkyBox(scale);
-            
+            {
+                // 1. Create a new game object
+                var ground = new GameObject("GroundPlane");
+
+                // 2. Create tiled mesh (100x100 units, 20x20 UV tiles)
+                var mesh = MeshFilterFactory.CreateQuadGridTexturedLit(
+                    _graphics.GraphicsDevice,
+                    widthSegments: 10,
+                    heightSegments: 10,
+                    width: 100f,
+                    height: 100f,
+                    uvTilesX: 20f,
+                    uvTilesY: 20f
+                );
+
+                // 3. Attach MeshFilter component
+                var meshFilter = ground.AddComponent<MeshFilter>();
+                meshFilter.SetGeometry(
+                    mesh.VertexBuffer,
+                    mesh.IndexBuffer,
+                    mesh.PrimitiveType,
+                    mesh.IndexCount
+                );
+
+                // 4. Attach MeshRenderer component
+                var meshRenderer = ground.AddComponent<MeshRenderer>();
+                meshRenderer.Material = _matBasicUnlitGround;
+
+                // 5. Apply ground texture
+                meshRenderer.Overrides.MainTexture = _textureDictionary.Get("grass1");
+
+                // 6. Ground transform
+                ground.Transform.TranslateTo(new Vector3(0, -1, 0));
+                ground.Transform.RotateEulerBy(new Vector3(MathHelper.ToRadians(-90), 0, 0));
+                ground.Transform.ScaleTo(Vector3.One);
+
+                // 7. Add to scene
+                _scene.Add(ground);
+            }
+
             // Setup renderers after all game objects added since ui text may use a gameobject as target
             InitializeUI();
 
