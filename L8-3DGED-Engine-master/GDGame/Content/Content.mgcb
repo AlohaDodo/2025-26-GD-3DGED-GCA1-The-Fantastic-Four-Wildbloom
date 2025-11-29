@@ -192,6 +192,12 @@
 /processorParam:TextureFormat=Compressed
 /build:Assets/Models/teapot.FBX
 
+#begin Assets/Sounds/BGM-Village.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Assets/Sounds/BGM-Village.mp3;Assets/Sounds/BGM-Village
+
 #begin Assets/Sounds/Explosion 1.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

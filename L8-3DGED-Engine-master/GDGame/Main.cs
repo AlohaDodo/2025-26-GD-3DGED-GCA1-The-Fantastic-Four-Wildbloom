@@ -268,10 +268,14 @@ namespace GDGame
             InitializeInputSystem();  //input
             InitializeCameraAndRenderSystems(); //update cameras, draw renderable game objects, draw ui and menu
             InitializeAudioSystem();
-            
+
+            // Play BGM immediately when game starts
+            EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f)
+);
+
         }
 
-        
+
 
         private void InitializeAudioSystem()
         {

@@ -113,6 +113,10 @@
       "contentPath": "assets/sounds/Explosion 1"
     },
     {
+      "name": "BGM-Village",
+      "contentPath": "assets/sounds/BGM-Village"
+    },
+    {
       "name": "hand_gun1",
       "contentPath": "assets/sounds/Hand Gun 1"
     },
