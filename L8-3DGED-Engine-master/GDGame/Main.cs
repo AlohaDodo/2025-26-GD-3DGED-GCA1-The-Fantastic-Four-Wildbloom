@@ -163,8 +163,6 @@ namespace GDGame
         private void InitializeMouse()
         {
             Mouse.SetPosition(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
-
-            
         }
 
         private void InitializeContext()
