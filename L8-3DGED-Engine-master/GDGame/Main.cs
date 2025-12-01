@@ -84,6 +84,8 @@ namespace GDGame
             //game manager, camera changer, FSM, AI
             InitializeManagers();
 
+            DemoLoadFromJSON();
+
             // Setup world
             int scale = 100;
             InitializeSkyParent();
@@ -464,7 +466,48 @@ namespace GDGame
 
         }
 
-       private void InitializeUI()
+        private GameObject InitializeModel(Vector3 position,
+            Vector3 eulerRotationDegrees, Vector3 scale,
+            string textureName, string modelName, string objectName)
+        {
+            GameObject gameObject = null;
+
+            gameObject = new GameObject(objectName);
+            gameObject.Transform.TranslateTo(position);
+            gameObject.Transform.RotateEulerBy(eulerRotationDegrees * MathHelper.Pi / 180f);
+            gameObject.Transform.ScaleTo(scale);
+
+            var model = _modelDictionary.Get(modelName);
+            var texture = _textureDictionary.Get(textureName);
+            var meshFilter = MeshFilterFactory.CreateFromModel(model, _graphics.GraphicsDevice, 0, 0);
+            gameObject.AddComponent(meshFilter);
+
+            var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+
+            meshRenderer.Material = _matBasicLit;
+            meshRenderer.Overrides.MainTexture = texture;
+
+            _scene.Add(gameObject);
+
+            return gameObject;
+        }
+
+        private void DemoLoadFromJSON()
+        {
+            var relativeFilePathAndName = "assets/data/single_model_spawn.json";
+            List<ModelSpawnData> mList = JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName);
+
+            //load a single model
+            foreach (var d in mList)
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+
+            relativeFilePathAndName = "assets/data/multi_model_spawn.json";
+            //load multiple models
+            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+        }
+
+        private void InitializeUI()
         {
             InitializeUIReticleRenderer();
         }

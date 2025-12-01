@@ -8,6 +8,6 @@
   "rotationDegrees": [ 45, 45, 45 ],
   "scale": [ 4, 4, 4 ],
   "textureName": "mona lisa", /*must be key name in _textureDictionary*/
-  "modelName": "cube", /*must be key name in _modelDictionary*/
+  "modelName": "Donuffin", /*must be key name in _modelDictionary*/
   "objectName": "spawn-0" /*use any name you want*/
 }

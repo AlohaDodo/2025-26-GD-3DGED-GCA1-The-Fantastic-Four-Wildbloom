@@ -85,28 +85,32 @@
       "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
     }
   ],
-  "models": [
-    {
-      "name": "monkey1",
-      "contentPath": "assets/models/monkey1"
-    },
-    {
-      "name": "cube",
-      "contentPath": "assets/models/cube"
-    },
-    {
-      "name": "teapot",
-      "contentPath": "assets/models/teapot"
-    },
-    {
-      "name": "teapot_lowpoly",
-      "contentPath": "assets/models/teapot_lowpoly"
-    },
-    {
-      "name": "plane",
-      "contentPath": "assets/models/plane"
-    }
-  ],
+    "models": [
+        {
+            "name": "Bouldoise",
+            "contentPath": "assets/models/Bouldoise"
+        },
+        {
+            "name": "Donuffin",
+            "contentPath": "assets/models/Donuffin"
+        },
+        {
+            "name": "Elytrao",
+            "contentPath": "assets/models/Elytrao"
+        },
+        {
+            "name": "Noodlord",
+            "contentPath": "assets/models/Noodlord"
+        },
+        {
+            "name": "teapot_lowpoly",
+            "contentPath": "assets/models/teapot_lowpoly"
+        },
+        {
+            "name": "plane",
+            "contentPath": "assets/models/plane"
+        }
+    ],
   "sounds": [
     {
       "name": "explosion1",

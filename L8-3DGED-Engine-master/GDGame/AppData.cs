@@ -42,8 +42,8 @@ namespace GDGame
         public static readonly string SKYBOX_FRONT_TEXTURE_KEY = "skybox_front";
         public static readonly string SKYBOX_SKY_TEXTURE_KEY = "skybox_sky";
 
-        public static readonly string PLAYER_TEXTURE_KEY = "crate1";
-        public static readonly string PLAYER_MODEL_KEY = "monkey1";
+        public static readonly string PLAYER_TEXTURE_KEY = "Bouldoise";
+        public static readonly string PLAYER_MODEL_KEY = "Noodlord";
 
         #endregion
 
