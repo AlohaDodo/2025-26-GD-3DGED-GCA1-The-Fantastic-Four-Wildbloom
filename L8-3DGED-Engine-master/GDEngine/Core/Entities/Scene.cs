@@ -344,7 +344,7 @@ namespace GDEngine.Core.Entities
         public void SetActiveCamera(string? targetName)
         {
             var go = Find(go => go.Name.Equals(targetName));
-            var camera = go.GetComponent<Camera>();
+            var camera = go?.GetComponent<Camera>();
             SetActiveCamera(camera);
         }
 
@@ -557,11 +557,6 @@ namespace GDEngine.Core.Entities
         public override string ToString()
         {
             return $"Scene(Name={Name}, GameObjects={_gameObjects.Count}, Systems={_systemsAll.Count})";
-        }
-
-        public void AddGameObject(GameObject grassQuadGO)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

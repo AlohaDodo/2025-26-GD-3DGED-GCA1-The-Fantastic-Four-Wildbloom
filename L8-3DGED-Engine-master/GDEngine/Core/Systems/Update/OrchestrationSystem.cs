@@ -1,7 +1,8 @@
 ﻿using GDEngine.Core.Entities;
 using GDEngine.Core.Enums;
 using GDEngine.Core.Orchestration;
-using GDEngine.Core.Rendering;
+using GDEngine.Core.Rendering.UI;
+using GDEngine.Core.Rendering.UI.Info;
 using GDEngine.Core.Services;
 using GDEngine.Core.Systems.Base;
 

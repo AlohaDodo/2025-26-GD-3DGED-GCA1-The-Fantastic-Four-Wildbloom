@@ -5,7 +5,7 @@ using GDEngine.Core.Collections;
 using GDEngine.Core.Components;
 using GDEngine.Core.Entities;
 using GDEngine.Core.Enums;
-using GDEngine.Core.Events;
+using GDEngine.Core.Events.Bus;
 using GDEngine.Core.Services;
 using GDEngine.Core.Systems.Base;
 using Microsoft.Xna.Framework;

@@ -1,6 +1,6 @@
 ﻿using GDEngine.Core.Collections;
 using GDEngine.Core.Entities;
-using GDEngine.Core.Events;
+using GDEngine.Core.Events.Bus;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

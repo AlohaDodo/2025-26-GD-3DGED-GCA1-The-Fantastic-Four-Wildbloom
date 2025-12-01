@@ -1,4 +1,4 @@
-﻿using GDEngine.Core.Events;
+﻿using GDEngine.Core.Events.Bus;
 
 namespace GDEngine.Core.Components
 {

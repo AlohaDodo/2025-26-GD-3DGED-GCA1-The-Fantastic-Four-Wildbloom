@@ -3,7 +3,7 @@ using GDEngine.Core.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GDEngine.Core.Rendering
+namespace GDEngine.Core.Rendering.UI
 {
     /// <summary>
     /// Named UI layers for SpriteBatch BackToFront sorting (0 = front, 1 = back).
@@ -295,9 +295,9 @@ namespace GDEngine.Core.Rendering
             if (scene == null)
                 return;
 
-            var uiSystem = scene.GetSystem<UIRenderSystem>();
-            if (uiSystem != null)
-                uiSystem.Add(this);
+            //var uiSystem = scene.GetSystem<UIRenderSystem>();
+            //if (uiSystem != null)
+            //    uiSystem.Add(this);
         }
 
         public abstract void Draw(GraphicsDevice device, Camera? camera);

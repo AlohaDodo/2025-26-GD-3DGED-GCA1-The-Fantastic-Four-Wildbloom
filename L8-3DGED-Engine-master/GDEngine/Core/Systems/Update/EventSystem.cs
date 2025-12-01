@@ -1,5 +1,5 @@
 ﻿using GDEngine.Core.Enums;
-using GDEngine.Core.Events;
+using GDEngine.Core.Events.Bus;
 using GDEngine.Core.Systems.Base;
 
 namespace GDEngine.Core.Systems

@@ -6,14 +6,14 @@ using GDEngine.Core.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GDEngine.Core.Rendering
+namespace GDEngine.Core.Rendering.UI
 {
     /// <summary>
     /// Draws a rotating reticle sprite at the mouse cursor (with optional offset/scale).
     /// Uses centralized batching in <see cref="UIRenderer"/>.
     /// Optimized to cache mouse state in Update rather than polling in Draw.
     /// </summary>
-    public class UIReticleRenderer : UIRenderer
+    public class UIReticle : UIRenderer
     {
         #region Fields
         private Texture2D _texture = null!;
@@ -25,7 +25,7 @@ namespace GDEngine.Core.Rendering
         #endregion
 
         #region Constructors
-        public UIReticleRenderer(Texture2D texture)
+        public UIReticle(Texture2D texture)
         {
             _texture = texture;
         }
@@ -100,7 +100,7 @@ namespace GDEngine.Core.Rendering
         }
         protected override void Update(float deltaTime)
         {
-            if(_rotationSpeedDegPerSec != 0)
+            if (_rotationSpeedDegPerSec != 0)
                 // Advance base RotationRadians so we use the centralized rotation field
                 RotationRadians += MathHelper.ToRadians(_rotationSpeedDegPerSec) * Time.DeltaTimeSecs;
         }

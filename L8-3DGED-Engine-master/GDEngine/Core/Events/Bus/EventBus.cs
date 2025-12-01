@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 
-namespace GDEngine.Core.Events
+namespace GDEngine.Core.Events.Bus
 {
     /// <summary>
     /// Lightweight publish/subscribe event hub with:

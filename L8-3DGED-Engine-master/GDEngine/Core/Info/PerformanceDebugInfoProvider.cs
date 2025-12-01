@@ -1,5 +1,7 @@
 ﻿#nullable enable
 using GDEngine.Core.Rendering;
+using GDEngine.Core.Rendering.UI;
+using GDEngine.Core.Rendering.UI.Info;
 using GDEngine.Core.Timing;
 using System.Text;
 
