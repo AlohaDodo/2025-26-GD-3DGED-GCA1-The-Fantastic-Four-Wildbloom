@@ -301,7 +301,7 @@ namespace GDEngine.Core.Managers
             _controlsLayoutTexture.Size = new Vector2(itemSize.X * 1.5f, itemSize.Y * 2.0f);
             _controlsLayoutTexture.Position = panelPosition + new Vector2(0f, 0f);
             _controlsLayoutTexture.Tint = Color.White;
-            _controlsLayoutTexture.LayerDepth = UILayer.Menu;
+           // _controlsLayoutTexture.LayerDepth = UILayer.Menu;
 
             _controlsBackButton = _controlsMenuPanel.AddButton(
                 "Back",
