@@ -85,17 +85,16 @@ namespace GDGame
             // Scene to hold game objects
             InitializeScene();
 
-            // Camera, UI, Menu, Physics, Rendering etc.
-            InitializeSystems();
-
             // All cameras we want in the game are loaded now and one set as active
             InitializeCameras();
 
             //game manager, camera changer, FSM, AI
             InitializeManagers();
 
-            DemoLoadFromJSON();
+            // Camera, UI, Menu, Physics, Rendering etc.
+            InitializeSystems();
 
+            DemoLoadFromJSON();
             // Setup world
             int scale = 100;
             InitializeSkyParent();
@@ -553,13 +552,14 @@ namespace GDGame
 
         private void InitializeSystems()
         {
+
+            var activeScene = _sceneManager.ActiveScene;
             InitializePhysicsSystem();
             InitializePhysicsDebugSystem(true);
             InitializeEventSystem();  //propagate events
             InitializeInputSystem();  //input
             InitializeCameraAndRenderSystems(); //update cameras, draw renderable game objects, draw ui and menu
             InitializeAudioSystem();
-
             // Play BGM immediately when game starts
             //EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
 
