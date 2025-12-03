@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using GDEngine.Core.Entities;
+﻿using GDEngine.Core.Entities;
+using GDEngine.Core.Events;
+using GDEngine.Core.Events.Bus;
 using GDEngine.Core.Rendering.UI;
 using GDEngine.Core.Timing;
 using Microsoft.Xna.Framework;
@@ -24,6 +24,8 @@ namespace GDEngine.Core.Managers
         private Scene? _activeScene;
 
         private bool _disposed;
+        private bool _paused;
+        private EventBus _eventBus;
         #endregion
 
         #region Properties
@@ -58,12 +60,37 @@ namespace GDEngine.Core.Managers
         {
             get { return _activeScene != null; }
         }
+
+        /// <summary>
+        /// True when the game is globally paused. This does NOT stop the scene
+        /// from updating; instead it broadcasts a pause-changed event that
+        /// a PausableSystem (e.g. PhysicsSystem) can react to.
+        /// </summary>
+        public bool Paused
+        {
+            get { return _paused; }
+            set
+            {
+                if (_paused == value)
+                    return;
+
+                _paused = value;
+
+                // Broadcast to the whole game
+                _eventBus?.Publish(new GamePauseChangedEvent(_paused));
+            }
+        }
+
+        public EventBus EventBus { set => _eventBus = value; }
+
+
         #endregion
 
         #region Constructors
         public SceneManager(Game game)
             : base(game)
         {
+
         }
         #endregion
 
@@ -198,7 +225,7 @@ namespace GDEngine.Core.Managers
         {
             string activeName = _activeSceneName ?? "none";
             yield return "SceneManager  Active=" + activeName;
-
+            yield return "  Paused=" + _paused.ToString();
             yield return "Scenes=" + _scenes.Count.ToString();
 
             if (_scenes.Count == 0)
