@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GDEngine.Core;
 using GDEngine.Core.Audio;
+using GDEngine.Core.Audio.Events;
 using GDEngine.Core.Collections;
 using GDEngine.Core.Components;
 using GDEngine.Core.Debug;
@@ -560,7 +561,7 @@ namespace GDGame
             InitializeAudioSystem();
 
             // Play BGM immediately when game starts
-            //EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
+            EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
 
         }
 
