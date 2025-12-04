@@ -76,6 +76,10 @@
             "name": "controlsmenu",
             "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
         },
+        {
+            "name": "professorThorn",
+            "contentPath": "assets/textures/ui/backgrounds/Professor"
+        },
         ///UI - SLIDER
         {
             "name": "Free Flat Toggle Thumb Centre Icon",
