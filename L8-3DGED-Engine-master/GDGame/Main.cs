@@ -49,8 +49,7 @@ namespace GDGame
 
         //Menu feilds
         private LayerMask _collisionDebugMask = LayerMask.All;
-        private float _currentHealth = 100;
-        private MenuManager _menuManager;
+        private MenuManager _menuManager; 
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -221,8 +220,6 @@ namespace GDGame
             {
                 _sceneManager.Paused = false;
                 _menuManager.HideMenus();
-
-                //fade out menu sound
             };
 
             _menuManager.ExitRequested += () =>
@@ -243,8 +240,6 @@ namespace GDGame
             {
                 // Forward to audio manager
                 System.Diagnostics.Debug.WriteLine("SfxVolumeChanged");
-
-                //raise event to set sound
             };
 
 
@@ -358,15 +353,11 @@ namespace GDGame
 
         private void InitializeScene()
         {
-            // Make a scene that will store all drawn objects and systems for that level
             _scene = new Scene(EngineContext.Instance, "outdoors - level 1");
 
-            // Add each new scene into the manager
-            _sceneManager.AddScene("outdoors - level 1", _scene);
-            _sceneManager.AddScene("AppData", _scene);
+            _sceneManager.AddScene(_scene.Name, _scene);
 
-            // Set the active scene before anything that uses ActiveScene
-            _sceneManager.SetActiveScene("AppData");
+            _sceneManager.SetActiveScene(_scene.Name);
         }
 
         private void InitializeSystems()
@@ -376,6 +367,7 @@ namespace GDGame
             InitializeEventSystem();  //propagate events  
             InitializeInputSystem();  //input
             InitializeCameraAndRenderSystems(); //update cameras, draw renderable game objects, draw ui and menu
+            _sceneManager.ActiveScene.Add(new UIEventSystem()); //ui events
             InitializeAudioSystem();
             InitializeOrchestrationSystem(false); //show debugger
             InitializeImpulseSystem();    //camera shake, audio duck volumes etc   
@@ -471,12 +463,15 @@ namespace GDGame
 
         private void InitializeCameraAndRenderSystems()
         {
+            //manages camera
             var cameraSystem = new CameraSystem(_graphics.GraphicsDevice, -100);
             _sceneManager.ActiveScene.Add(cameraSystem);
 
+            //3d
             var renderSystem = new RenderSystem(-100);
             _sceneManager.ActiveScene.Add(renderSystem);
 
+            //2d
             var uiRenderSystem = new UIRenderSystem(-100);
             _sceneManager.ActiveScene.Add(uiRenderSystem); // draws in PostRender after RenderingSystem (order = -100)
         }
