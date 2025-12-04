@@ -84,15 +84,14 @@ namespace GDGame
 
             // Scene to hold game objects
             InitializeScene();
+            _sceneManager.AddScene(_scene.Name, _scene);
+            _sceneManager.SetActiveScene(_scene.Name);
 
-            // All cameras we want in the game are loaded now and one set as active
-            InitializeCameras();
+
 
             //game manager, camera changer, FSM, AI
             InitializeManagers();
 
-            // Camera, UI, Menu, Physics, Rendering etc.
-            InitializeSystems();
 
             DemoLoadFromJSON();
             // Setup world
@@ -134,6 +133,12 @@ namespace GDGame
                 ground.Transform.TranslateTo(new Vector3(0, -1, 0));
                 ground.Transform.RotateEulerBy(new Vector3(MathHelper.ToRadians(-90), 0, 0));
                 ground.Transform.ScaleTo(Vector3.One);
+
+
+                // Camera, UI, Menu, Physics, Rendering etc.
+                InitializeSystems();
+                // All cameras we want in the game are loaded now and one set as active
+                InitializeCameras();
 
                 // 7. Add to scene
                 _scene.Add(ground);

@@ -4,7 +4,6 @@ using GDEngine.Core.Entities;
 using GDEngine.Core.Enums;
 using GDEngine.Core.Rendering;
 using GDEngine.Core.Services;
-
 using Microsoft.Xna.Framework.Graphics;
 
 namespace GDEngine.Core.Systems

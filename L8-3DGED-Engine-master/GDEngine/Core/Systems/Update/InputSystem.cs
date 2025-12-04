@@ -1,7 +1,6 @@
 ﻿using GDEngine.Core.Enums;
 using GDEngine.Core.Input.Devices;
 
-
 namespace GDEngine.Core.Systems
 {
     /// <summary>
