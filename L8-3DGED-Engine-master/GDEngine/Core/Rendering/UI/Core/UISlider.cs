@@ -1,5 +1,5 @@
 ﻿using GDEngine.Core.Components;
-using GDEngine.Core.Entities;
+using GDEngine.Core.Events;
 using GDEngine.Core.Systems;
 using Microsoft.Xna.Framework;
 
@@ -284,19 +284,19 @@ namespace GDEngine.Core.Rendering.UI
             base.Awake();
 
             // Try to infer handle from children if not explicitly assigned
-            //if (_handleGraphic == null && Transform != null)
-            //{
-            //    for (int i = 0; i < Transform.ChildCount; i++)
-            //    {
-            //        var child = Transform.Children[i];
-            //        var handle = child.GameObject?.GetComponent<UITexture>();
-            //        if (handle != null)
-            //        {
-            //            _handleGraphic = handle;
-            //            break;
-            //        }
-            //    }
-            //}
+            if (_handleGraphic == null && Transform != null)
+            {
+                for (int i = 0; i < Transform.ChildCount; i++)
+                {
+                    var child = Transform.Children[i];
+                    var handle = child.GameObject?.GetComponent<UITexture>();
+                    if (handle != null)
+                    {
+                        _handleGraphic = handle;
+                        break;
+                    }
+                }
+            }
 
             UpdateHandlePosition();
         }
@@ -312,12 +312,12 @@ namespace GDEngine.Core.Rendering.UI
             if (scene == null)
                 return;
 
-            //var uiEventSystem = scene.GetSystem<EventSystem>();
-            //if (uiEventSystem == null)
-            //    return;
+            var uiEventSystem = scene.GetSystem<UIEventSystem>();
+            if (uiEventSystem == null)
+                return;
 
-            //Vector2 pointer = uiEventSystem.PointerPosition;
-            //UpdateValueFromPointer(pointer.X, true);
+            Vector2 pointer = uiEventSystem.PointerPosition;
+            UpdateValueFromPointer(pointer.X, true);
         }
         #endregion
 

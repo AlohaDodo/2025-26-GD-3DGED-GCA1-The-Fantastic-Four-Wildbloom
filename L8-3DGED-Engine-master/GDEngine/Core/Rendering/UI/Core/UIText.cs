@@ -1,9 +1,10 @@
 ﻿using GDEngine.Core.Components;
+using GDEngine.Core.Rendering.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace GDEngine.Core.Rendering.UI
+namespace GDEngine.Core.Rendering
 {
     /// <summary>
     /// Generic UI text renderer that draws a string at a position supplied by a delegate.

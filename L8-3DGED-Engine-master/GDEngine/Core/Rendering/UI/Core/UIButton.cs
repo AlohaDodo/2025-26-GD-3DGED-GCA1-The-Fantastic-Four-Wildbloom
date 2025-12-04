@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using System.Drawing;
+using GDEngine.Core.Events;
+using Microsoft.Xna.Framework;
 
 namespace GDEngine.Core.Rendering.UI
 {

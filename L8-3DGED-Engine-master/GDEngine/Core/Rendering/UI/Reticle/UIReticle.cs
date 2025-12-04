@@ -100,7 +100,7 @@ namespace GDEngine.Core.Rendering.UI
         }
         protected override void Update(float deltaTime)
         {
-            if (_rotationSpeedDegPerSec != 0)
+            if(_rotationSpeedDegPerSec != 0)
                 // Advance base RotationRadians so we use the centralized rotation field
                 RotationRadians += MathHelper.ToRadians(_rotationSpeedDegPerSec) * Time.DeltaTimeSecs;
         }
