@@ -1,0 +1,189 @@
+{
+    "version": 1,
+    "meta": {
+        "author": "NMCG",
+        "asset": "Multi game object loaded from JSON"
+    },
+    "spawns": [
+        {
+            "position": [
+                -40,
+                10,
+                40
+            ],
+            "rotationDegrees": [
+                0,
+                90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                -40,
+                10,
+                -20
+            ],
+            "rotationDegrees": [
+                0,
+                90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                -40,
+                10,
+                0
+            ],
+            "rotationDegrees": [
+                0,
+                90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "houseTXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                -40,
+                10,
+                20
+            ],
+            "rotationDegrees": [
+                0,
+                90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                40,
+                10,
+                40
+            ],
+            "rotationDegrees": [
+                0,
+                -90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                40,
+                10,
+                -20
+            ],
+            "rotationDegrees": [
+                0,
+                -90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                40,
+                10,
+                0
+            ],
+            "rotationDegrees": [
+                0,
+                -90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                40,
+                10,
+                20
+            ],
+            "rotationDegrees": [
+                0,
+                -90,
+                0
+            ],
+            "scale": [
+                0.1,
+                0.1,
+                0.1
+            ],
+            "textureName": "house1TXT",
+            "modelName": "house1",
+            "objectName": "spawn-1"
+        },
+        {
+            "position": [
+                0,
+                10,
+                -40
+            ],
+            "rotationDegrees": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "textureName": "house3TXT",
+            "modelName": "house3",
+            "objectName": "spawn-1"
+        }
+    ]
+}

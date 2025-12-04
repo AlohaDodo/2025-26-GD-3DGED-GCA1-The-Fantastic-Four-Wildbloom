@@ -18,107 +18,138 @@
       "contentPath": "assets/fonts/menufont"
     }
   ],
-  "textures": [
-    {
-      "name": "grass1",
-      "contentPath": "assets/textures/foliage/ground/grass1"
-    },
+    "textures": [
+        {
+            "name": "BouldoiseTXT",
+            "contentPath": "assets/textures/bloomlings/BouldoiseTXT"
+        },
+        {
+            "name": "house1TXT",
+            "contentPath": "assets/textures/environment/house1_color"
+        },
+        {
+            "name": "house3TXT",
+            "contentPath": "assets/textures/environment/house3_color"
+        },
+        {
+            "name": "treeTXT",
+            "contentPath": "assets/textures/environment/treeTXT"
+        },
+        {
+            "name": "fenceTXT",
+            "contentPath": "assets/textures/environment/fenceTXT"
+        },
+        {
+            "name": "grass1",
+            "contentPath": "assets/textures/foliage/ground/grass1"
+        },
+        {
+            "name": "skybox_back",
+            "contentPath": "assets/textures/skybox/back"
+        },
+        {
+            "name": "skybox_front",
+            "contentPath": "assets/textures/skybox/front"
+        },
+        {
+            "name": "skybox_left",
+            "contentPath": "assets/textures/skybox/left"
+        },
+        {
+            "name": "skybox_right",
+            "contentPath": "assets/textures/skybox/right"
+        },
+        {
+            "name": "skybox_sky",
+            "contentPath": "assets/textures/skybox/sky"
+        },
 
-    {
-      "name": "skybox_back",
-      "contentPath": "assets/textures/skybox/back"
-    },
-    {
-      "name": "skybox_front",
-      "contentPath": "assets/textures/skybox/front"
-    },
-    {
-      "name": "skybox_left",
-      "contentPath": "assets/textures/skybox/left"
-    },
-    {
-      "name": "skybox_right",
-      "contentPath": "assets/textures/skybox/right"
-    },
-    {
-      "name": "skybox_sky",
-      "contentPath": "assets/textures/skybox/sky"
-    },
+        {
+            "name": "crate1",
+            "contentPath": "assets/textures/props/crates/crate1"
+        },
+        {
+            "name": "tree4",
+            "contentPath": "assets/textures/foliage/trees/tree4"
+        },
 
-    {
-      "name": "crate1",
-      "contentPath": "assets/textures/props/crates/crate1"
-    },
-    {
-      "name": "tree4",
-      "contentPath": "assets/textures/foliage/trees/tree4"
-    },
+        {
+            "name": "checkerboard",
+            "contentPath": "assets/textures/demo/checkerboard"
+        },
+        {
+            "name": "mona lisa",
+            "contentPath": "assets/textures/demo/mona lisa"
+        },
 
-    {
-      "name": "checkerboard",
-      "contentPath": "assets/textures/demo/checkerboard"
-    },
-    {
-      "name": "mona lisa",
-      "contentPath": "assets/textures/demo/mona lisa"
-    },
+        {
+            "name": "mouse_reticle",
+            "contentPath": "assets/textures/ui/mouse/reticleClosed"
+        },
+        {
+            "name": "Crosshair_21",
+            "contentPath": "assets/textures/ui/mouse/Crosshair_01"
+        },
 
-    {
-      "name": "mouse_reticle",
-      "contentPath": "assets/textures/ui/mouse/reticleClosed"
-    },
-    {
-      "name": "Crosshair_21",
-      "contentPath": "assets/textures/ui/mouse/Crosshair_01"
-    },
-
-    {
-      "name": "mainmenu",
-      "contentPath": "assets/textures/ui/backgrounds/mainmenu"
-    },
-    {
-      "name": "mainmenu_monkey",
-      "contentPath": "assets/textures/ui/backgrounds/mainmenu_monkey"
-    },
-    {
-      "name": "controlsmenu_monkey",
-      "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
-    }
-  ],
+        {
+            "name": "mainmenu",
+            "contentPath": "assets/textures/ui/backgrounds/mainmenu"
+        },
+        {
+            "name": "mainmenu_monkey",
+            "contentPath": "assets/textures/ui/backgrounds/mainmenu_monkey"
+        },
+        {
+            "name": "controlsmenu_monkey",
+            "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+        }
+    ],
     "models": [
         {
             "name": "Bouldoise",
-            "contentPath": "assets/models/Bouldoise"
+            "contentPath": "assets/models/bloomlings/Bouldoise"
         },
         {
             "name": "Donuffin",
-            "contentPath": "assets/models/Donuffin"
+            "contentPath": "assets/models/bloomlings/Donuffin"
         },
         {
             "name": "Elytrao",
-            "contentPath": "assets/models/Elytrao"
+            "contentPath": "assets/models/bloomlings/Elytrao"
         },
         {
             "name": "Noodlord",
-            "contentPath": "assets/models/Noodlord"
+            "contentPath": "assets/models/bloomlings/Noodlord"
         },
         {
-            "name": "teapot_lowpoly",
-            "contentPath": "assets/models/teapot_lowpoly"
+            "name": "house1",
+            "contentPath": "assets/models/environment/house1"
         },
         {
-            "name": "plane",
-            "contentPath": "assets/models/plane"
+            "name": "house3",
+            "contentPath": "assets/models/environment/house3"
+        },
+        {
+            "name": "tree",
+            "contentPath": "assets/models/environment/tree"
+        },
+        {
+            "name": "fence_end",
+            "contentPath": "assets/models/environment/fence_end"
+        },
+        {
+            "name": "half_fence",
+            "contentPath": "assets/models/environment/half_fence"
+        },
+        {
+            "name": "path",
+            "contentPath": "assets/models/environment/path"
         }
     ],
   "sounds": [
     {
       "name": "explosion1",
       "contentPath": "assets/sounds/Explosion 1"
-    },
-    {
-      "name": "BGM-Village",
-      "contentPath": "assets/sounds/BGM-Village"
     },
     {
       "name": "hand_gun1",

@@ -24,6 +24,10 @@ namespace GDGame
 
         public static readonly string MULTI_MODEL_SPAWN_PATH =
             "assets/data/multi_model_spawn.json";
+        public static readonly string MULTI_ENVIRONMENT_SPAWN_PATH =
+            "assets/data/multi_environment_spawn.json";
+        public static readonly string MULTI_HOUSE_SPAWN_PATH =
+            "assets/data/multi_house_spawn.json";
 
         public static readonly string GROUND_TEXTURE_KEY = "ground_grass";
         public static readonly string GROUND_TEXTURE_PATH =

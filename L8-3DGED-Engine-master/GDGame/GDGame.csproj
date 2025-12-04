@@ -12,6 +12,9 @@
     <ApplicationIcon>wildbloom.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\Assets\Sounds\BGM-Village.mp3" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="wildbloom.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -25,12 +28,22 @@
     <None Update="Content\Assets\Data\asset_manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Content\Assets\Data\multi_house_spawn.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Content\Assets\Data\multi_model_spawn.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+	<None Update="Content\Assets\Data\multi_environment_spawn.json">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
     <None Update="Content\Assets\Data\single_model_spawn.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Assets\Models\Environment\" />
+    <Folder Include="Content\Assets\Textures\Environment\" />
   </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="CollectPackageReferences">
     <Message Text="Restoring dotnet tools (this might take a while depending on the internet speed and should only happen upon building the project for the first time, or after upgrading MonoGame, or clearing the nuget cache)" Importance="High" />
