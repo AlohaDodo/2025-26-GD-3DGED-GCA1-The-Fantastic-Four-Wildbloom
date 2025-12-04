@@ -1,4 +1,3 @@
-﻿using System;
 using System.Collections.Generic;
 using GDEngine.Core;
 using GDEngine.Core.Audio;
@@ -17,6 +16,7 @@ using GDEngine.Core.Rendering;
 using GDEngine.Core.Rendering.Base;
 using GDEngine.Core.Rendering.UI;
 using GDEngine.Core.Rendering.UI.Info;
+using GDEngine.Core.Screen;
 using GDEngine.Core.Serialization;
 using GDEngine.Core.Services;
 using GDEngine.Core.Systems;
@@ -44,6 +44,10 @@ namespace GDGame
         private UIMenuPanel _mainMenuPanel, _audioMenuPanel;
         private bool _disposed = false;
         private Material _matBasicUnlit, _matBasicLit, _matAlphaCutout, _matBasicUnlitGround;
+
+        //Menu feilds
+        private LayerMask _collisionDebugMask = LayerMask.All;
+        private MenuManager _menuManager; 
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -63,7 +67,7 @@ namespace GDGame
             Window.Title = "Wildbloom";
 
             // Set resolution and centering (by monitor index)
-            InitializeGraphics(ScreenResolution.R_HD_16_9_1280x720);
+            InitializeGraphics(GDEngine.Core.ScreenResolution.R_HD_16_9_1280x720);
 
             // Center and hide the mouse!
             InitializeMouse();
@@ -78,8 +82,8 @@ namespace GDGame
             // All effects used in game
             InitializeEffects();
 
-            _sceneManager = new SceneManager(this);
-            Components.Add(_sceneManager);
+            // Scene manager to handle multiple scenes/levels
+            InitializeSceneManager();
 
             // Scene to hold game objects
             InitializeScene();
@@ -87,11 +91,14 @@ namespace GDGame
             // Camera, UI, Menu, Physics, Rendering etc.
             InitializeSystems();
 
+            // Camera event listener to handle camera events
+            InitializeCameraManagers();
+
             // All cameras we want in the game are loaded now and one set as active
             InitializeCameras();
 
             //game manager, camera changer, FSM, AI
-            InitializeManagers();
+            //InitializeManagers();
 
             DemoLoadFromJSON();
 
@@ -143,269 +150,55 @@ namespace GDGame
             InitializeUI();
 
             // Setup menu
-            //InitializeMenu();
-
-            #endregion
+            InitializeMenuManager();
 
             //set the active scene
-            //_sceneManager.activeSceneName = "outdoors - level 1";
+            _sceneManager.SetActiveScene(_scene.Name);
+
+            // Setup pause handling to show menu
+            SetPauseShowMenu();
+
+            #endregion
 
             base.Initialize();
         }
 
-        //DEMO MENU
-        private void DemoMenu()
+        private void SetPauseShowMenu()
         {
-            // Define a size for the button on screen
-            Vector2 buttonSize = new Vector2(200f, 64f);
-            Vector2 buttonPosition = new Vector2(100f, 100f); // top-left in UI space
-            //DemoUIButton(_scene, "Click me", buttonPosition, buttonSize);
+            // Give scenemanager the events reference so that it can publish the pause event
+            _sceneManager.EventBus = EngineContext.Instance.Events;
+            // Set paused and publish pause event
+            _sceneManager.Paused = true;
 
-            //DemoUISlider(_scene);
+            // Put all components that should be paused to sleep
+            EngineContext.Instance.Events.Subscribe<GamePauseChangedEvent>(e =>
+            {
+                bool paused = e.IsPaused;
 
-            DemoMainMenu(_scene);
+                _sceneManager.ActiveScene.GetSystem<PhysicsSystem>()?.SetPaused(paused);
+                _sceneManager.ActiveScene.GetSystem<PhysicsDebugSystem>()?.SetPaused(paused);
+                _sceneManager.ActiveScene.GetSystem<GameStateSystem>()?.SetPaused(paused);
+            });
         }
 
-        private void DemoMainMenu(Scene scene)
+        private void InitializeSceneManager()
         {
-            // Load shared assets
-            Texture2D buttonTexture = _textureDictionary.Get("button_rectangle_10");
-            SpriteFont menuFont = _fontDictionary.Get("menufont");
-
-            GameObject panelObject = new GameObject("MainMenuPanel");
-            scene.Add(panelObject);
-
-            _mainMenuPanel = panelObject.AddComponent<UIMenuPanel>();
-            _mainMenuPanel.PanelPosition = new Vector2(100f, 100f);
-            _mainMenuPanel.ItemSize = new Vector2(220f, 60f);
-            _mainMenuPanel.VerticalSpacing = 12f;
-
-            // PLAY
-            _mainMenuPanel.AddButton(
-                "Play",
-                buttonTexture,
-                menuFont,
-                () =>
-                {
-                    System.Diagnostics.Debug.WriteLine("Play pressed");
-                    // TODO: start game / change state
-                });
-
-            // OPTIONS
-            _mainMenuPanel.AddButton(
-                "Options",
-                buttonTexture,
-                menuFont,
-                () =>
-                {
-                    System.Diagnostics.Debug.WriteLine("Options pressed");
-                    // TODO: later you might show an options panel here
-                });
-
-            // AUDIO -> show audio panel, hide main
-            _mainMenuPanel.AddButton(
-                "Audio",
-                buttonTexture,
-                menuFont,
-                () =>
-                {
-                    System.Diagnostics.Debug.WriteLine("Audio pressed");
-                    _mainMenuPanel.IsVisible = false;
-                    _audioMenuPanel.IsVisible = true;
-                });
-
-            // EXIT
-            _mainMenuPanel.AddButton(
-                "Exit",
-                buttonTexture,
-                menuFont,
-                () =>
-                {
-                    System.Diagnostics.Debug.WriteLine("Exit pressed");
-                    Exit();
-                });
+            _sceneManager = new SceneManager(this);
+            Components.Add(_sceneManager);
         }
 
-        private void DemoUISlider(Scene scene)
+        private void InitializeCameraManagers()
         {
-            // Load assets
-            Texture2D trackTexture = _textureDictionary.Get("Free Flat Hyphen Icon");
-            Texture2D handleTexture = _textureDictionary.Get("Free Flat Toggle Thumb Centre Icon");
-            SpriteFont sliderFont = _fontDictionary.Get("menufont");
-
-            // Logical slider size and position
-            Vector2 sliderSize = new Vector2(300f, 20f);
-            Vector2 sliderPosition = new Vector2(100f, 220f); // below the button demo
-
-            // Root GameObject for the slider
-            GameObject sliderObject = new GameObject("DemoSlider");
-            scene.Add(sliderObject);
-
-            // Track background texture
-            UITexture trackGraphic = sliderObject.AddComponent<UITexture>();
-            trackGraphic.Texture = trackTexture;
-            trackGraphic.Position = sliderPosition;
-            trackGraphic.Tint = Color.Red;
-            trackGraphic.Size = sliderSize;
-            trackGraphic.LayerDepth = UILayer.Menu;   // behind handle and text
-
-            // Slider logic
-            UISlider slider = sliderObject.AddComponent<UISlider>();
-            slider.TargetGraphic = trackGraphic;
-            slider.Position = sliderPosition;
-            slider.Size = sliderSize;
-            slider.MinValue = 1;
-            slider.MaxValue = 10;
-            slider.WholeNumbers = false;
-            slider.Value = 1;  // start in middle
-
-            // Handle is treated as a child GameObject
-            GameObject handleObject = new GameObject("SliderHandle");
-            scene.Add(handleObject);
-
-            // Attach handle under slider in the transform hierarchy
-            handleObject.Transform.SetParent(sliderObject.Transform);
-
-            // Slider handle texture
-            UITexture handleGraphic = handleObject.AddComponent<UITexture>();
-            handleGraphic.Texture = handleTexture;
-            handleGraphic.Size = new Vector2(20f, 20f); // logical handle size
-            handleGraphic.Tint = Color.Orange;
-            handleGraphic.LayerDepth = UILayer.MenuFront;
-            slider.HandleGraphic = handleGraphic;
-
-            // Label to display current value above the slider
-            UIText valueLabel = sliderObject.AddComponent<UIText>();
-            valueLabel.Font = sliderFont;
-            valueLabel.FallbackColor = Color.White;
-            valueLabel.DropShadow = true;
-            valueLabel.LayerDepth = UILayer.MenuFront;
-
-            valueLabel.TextProvider = () =>
-            {
-                return $"SFX Volume: {slider.Value:0}";
-            };
-
-            // Position the label centered on the slider, slightly above
-            valueLabel.PositionProvider = () =>
-            {
-                Vector2 center = slider.Position + (slider.Size * 0.5f);
-                return center + new Vector2(0f, -30f);
-            };
-            valueLabel.Anchor = TextAnchor.Center;
-            valueLabel.UniformScale = 1f;
-            valueLabel.Offset = Vector2.Zero;
-
-            // Subscribe to slider changes for logging/demo
-            slider.ValueChanged += UpdateSliderValue;
-        }
-
-        private void UpdateSliderValue(float value)
-        {
-            System.Diagnostics.Debug.WriteLine(value);
-        }
-
-        private void DemoUIButton(Scene scene, string buttonText, Vector2 buttonPosition, Vector2 buttonSize)
-        {
-            // Load a simple button texture and font from your Content pipeline
-            Texture2D buttonTexture = _textureDictionary.Get("button_rectangle_10");
-            SpriteFont buttonFont = _fontDictionary.Get("menufont");
-
-            // Create and add GameObject to the scene
-            GameObject buttonObject = new GameObject("DemoButton");
-            scene.Add(buttonObject);
-
-            // UITexture as the target graphic
-            UITexture buttonGraphic = buttonObject.AddComponent<UITexture>();
-            buttonGraphic.Texture = buttonTexture;
-            buttonGraphic.Position = buttonPosition;
-            buttonGraphic.Size = buttonSize;
-            buttonGraphic.Tint = Color.Red;
-            buttonGraphic.LayerDepth = UILayer.Menu;           // background layer for the button
-
-            // UIButton built on UISelectable
-            UIButton button = buttonObject.AddComponent<UIButton>();
-            button.TargetGraphic = buttonGraphic;
-            button.AutoSizeFromTargetGraphic = false;
-            button.Position = buttonPosition;
-            button.Size = buttonSize;
-            button.NormalColor = Color.Black;
-            button.HighlightedColor = Color.LightGray;
-            button.PressedColor = Color.Gray;
-            button.DisabledColor = Color.DarkGray;
-
-            // UIText centered on the button (Unity-style "Text" child)
-            UIText label = buttonObject.AddComponent<UIText>();
-            label.Font = buttonFont;
-            label.FallbackColor = Color.White;
-            label.DropShadow = true;
-            label.LayerDepth = UILayer.MenuFront; // in front of the button background
-
-            // Center the label on the button:
-            // - PositionProvider returns the *center* of the button
-            // - Anchor Center means the text will be centered around that point
-            label.TextProvider = () => buttonText;
-            label.PositionProvider = () =>
-            {
-                return button.Position + (button.Size * 0.5f);
-            };
-            label.Anchor = TextAnchor.Center;
-            label.UniformScale = 1;
-            label.Offset = Vector2.Zero;
-
-            // Hook up events for demo
-            button.PointerEntered += HandlePointEntered;
-
-            button.PointerExited += () =>
-            {
-                System.Diagnostics.Debug.WriteLine("Button: Pointer exited");
-            };
-
-            button.PointerDown += () =>
-            {
-                System.Diagnostics.Debug.WriteLine("Button: Pointer down");
-            };
-
-            button.PointerUp += () =>
-            {
-                System.Diagnostics.Debug.WriteLine("Button: Pointer up");
-            };
-
-            button.Clicked += () =>
-            {
-                System.Diagnostics.Debug.WriteLine("Button: Clicked!");
-            };
-        }
-
-        private void HandlePointEntered()
-        {
-            //play sound
-            //raise/publish event
-            //orchestration
-            //reset the player
-            //consume the cola ++ health
-            System.Diagnostics.Debug.WriteLine("HandlePointEntered");
-        }
-
-        private void InitializeManagers()
-        {
-            //outside scene
-            InitializeMenuManager();
-
-            //InitializeSceneManager();
-
-            //InitializeGameStateManager();
-
             //inside scene
             var go = new GameObject("Camera Manager");
             go.AddComponent<CameraEventListener>();
-            _scene.Add(go);
+            _sceneManager.ActiveScene.Add(go);
         }
 
         private void InitializeMenuManager()
         {
-            var menuManager = new MenuManager(this);
-            Components.Add(menuManager);
+            _menuManager = new MenuManager(this, _sceneManager);
+            Components.Add(_menuManager);
 
             Texture2D btnTex = _textureDictionary.Get("button_rectangle_10");
             Texture2D trackTex = _textureDictionary.Get("Free Flat Hyphen Icon");
@@ -414,28 +207,40 @@ namespace GDGame
             SpriteFont uiFont = _fontDictionary.Get("menufont");
 
             // Wire UIManager to the menu scene
-            menuManager.Initialize(_scene, btnTex, trackTex, handleTex, controlsTx, uiFont);
+            _menuManager.Initialize(_sceneManager.ActiveScene,
+                btnTex, trackTex, handleTex, controlsTx, uiFont,
+                _textureDictionary.Get("mainMenuWildBloom"),
+                 _textureDictionary.Get("controlsmenu"),
+                  _textureDictionary.Get("controlsmenu"));
 
             // Subscribe to high-level events
-            menuManager.PlayRequested += () =>
+            _menuManager.PlayRequested += () =>
             {
-                // Tell your future SceneManager to switch from menuScene to gameplayScene
+                _sceneManager.Paused = false;
+                _menuManager.HideMenus();
             };
 
-            menuManager.ExitRequested += () =>
+            _menuManager.ExitRequested += () =>
             {
                 Exit();
             };
 
-            menuManager.MusicVolumeChanged += v =>
+            _menuManager.MusicVolumeChanged += v =>
             {
                 // Forward to audio manager
+                System.Diagnostics.Debug.WriteLine("MusicVolumeChanged");
+
+                //raise event to set sound
+                // EngineContext.Instance.Events.Publish(new PlaySfxEvent)
             };
 
-            menuManager.SfxVolumeChanged += v =>
+            _menuManager.SfxVolumeChanged += v =>
             {
                 // Forward to audio manager
+                System.Diagnostics.Debug.WriteLine("SfxVolumeChanged");
             };
+
+
         }
 
         private void InitializeGraphics(Integer2 resolution)
@@ -444,7 +249,7 @@ namespace GDGame
             System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode.PerMonitorV2);
 
             // Set preferred resolution
-            ScreenResolution.SetResolution(_graphics, resolution);
+            GDEngine.Core.ScreenResolution.SetResolution(_graphics, resolution);
 
             // Center on primary display (set to index of the preferred monitor)
             WindowUtility.CenterOnMonitor(this, 1);
@@ -546,43 +351,99 @@ namespace GDGame
 
         private void InitializeScene()
         {
-            // Make a scene that will store all drawn objects and systems for that level
             _scene = new Scene(EngineContext.Instance, "outdoors - level 1");
+
+            _sceneManager.AddScene(_scene.Name, _scene);
+
+            _sceneManager.SetActiveScene(_scene.Name);
         }
 
         private void InitializeSystems()
         {
             InitializePhysicsSystem();
-            InitializePhysicsDebugSystem(true);
-            InitializeEventSystem();  //propagate events
+            InitializePhysicsDebugSystem(false);
+            InitializeEventSystem();  //propagate events  
             InitializeInputSystem();  //input
             InitializeCameraAndRenderSystems(); //update cameras, draw renderable game objects, draw ui and menu
+            _sceneManager.ActiveScene.Add(new UIEventSystem()); //ui events
             InitializeAudioSystem();
+            InitializeOrchestrationSystem(false); //show debugger
+            InitializeImpulseSystem();    //camera shake, audio duck volumes etc   
+            InitializeGameStateSystem();   //manage and track game state
+                                           //  InitializeNavMeshSystem();
 
             // Play BGM immediately when game starts
             //EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
 
         }
 
+        private void InitializeGameStateSystem()
+        {
+            // Add game state system
+            _sceneManager.ActiveScene.AddSystem(new GameStateSystem());
+        }
+
+        private void InitializeImpulseSystem()
+        {
+            _sceneManager.ActiveScene.Add(new ImpulseSystem(EngineContext.Instance.Impulses));
+        }
+
+        private void InitializeOrchestrationSystem(bool debugEnabled)
+        {
+            var orchestrationSystem = new OrchestrationSystem();
+            orchestrationSystem.Configure(options =>
+            {
+                options.Time = Orchestrator.OrchestrationTime.Unscaled;
+                options.LocalScale = 1;
+                options.Paused = false;
+            });
+            _sceneManager.ActiveScene.Add(orchestrationSystem);
+
+            // Debugger
+            if (debugEnabled)
+            {
+                GameObject debugGO = new GameObject("Perf Stats");
+                var debugRenderer = debugGO.AddComponent<UIDebugInfo>();
+
+                debugRenderer.Font = _fontDictionary.Get("perf_stats_font");
+                debugRenderer.ScreenCorner = ScreenCorner.TopLeft;
+                debugRenderer.Margin = new Vector2(10f, 10f);
+
+                // Register orchestration as a debug provider
+                if (orchestrationSystem != null)
+                    debugRenderer.Providers.Add(orchestrationSystem);
+
+                var perfProvider = new PerformanceDebugInfoProvider
+                {
+                    Profile = DisplayProfile.Profiling,
+                    ShowMemoryStats = true
+                };
+
+                debugRenderer.Providers.Add(perfProvider);
+
+                _sceneManager.ActiveScene.Add(debugGO);
+            }
+
+        }
 
 
         private void InitializeAudioSystem()
         {
-            _scene.Add(new AudioSystem(_soundDictionary));
+            _sceneManager.ActiveScene.Add(new AudioSystem(_soundDictionary));
         }
 
         private void InitializePhysicsDebugSystem(bool isEnabled)
         {
-            var physicsDebugRenderer = _scene.AddSystem(new PhysicsDebugRenderer());
+            //var physicsDebugRenderer = _scene.AddSystem(new PhysicsDebugRenderer());
 
             // Toggle debug rendering on/off
-            physicsDebugRenderer.Enabled = isEnabled; // or false to hide
+            //physicsDebugRenderer.Enabled = isEnabled; // or false to hide
 
             // Optional: Customize colors
-            physicsDebugRenderer.StaticColor = Color.Green;      // Immovable objects
-            physicsDebugRenderer.KinematicColor = Color.Blue;    // Animated objects
-            physicsDebugRenderer.DynamicColor = Color.Yellow;    // Physics-driven objects
-            physicsDebugRenderer.TriggerColor = Color.Red;       // Trigger volumes
+            //physicsDebugRenderer.StaticColor = Color.Green;      // Immovable objects
+            //physicsDebugRenderer.KinematicColor = Color.Blue;    // Animated objects
+            //physicsDebugRenderer.DynamicColor = Color.Yellow;    // Physics-driven objects
+            //physicsDebugRenderer.TriggerColor = Color.Red;       // Trigger volumes
 
         }
 
@@ -595,19 +456,22 @@ namespace GDGame
 
         private void InitializeEventSystem()
         {
-            _scene.Add(new EventSystem(EngineContext.Instance.Events));
+            _sceneManager.ActiveScene.Add(new EventSystem(EngineContext.Instance.Events));
         }
 
         private void InitializeCameraAndRenderSystems()
         {
+            //manages camera
             var cameraSystem = new CameraSystem(_graphics.GraphicsDevice, -100);
-            _scene.Add(cameraSystem);
+            _sceneManager.ActiveScene.Add(cameraSystem);
 
+            //3d
             var renderSystem = new RenderSystem(-100);
-            _scene.Add(renderSystem);
+            _sceneManager.ActiveScene.Add(renderSystem);
 
-            var uiRenderSystem = new UIRenderSystem(100);
-            _scene.Add(uiRenderSystem); // draws in PostRender after RenderingSystem (order = -100)
+            //2d
+            var uiRenderSystem = new UIRenderSystem(-100);
+            _sceneManager.ActiveScene.Add(uiRenderSystem); // draws in PostRender after RenderingSystem (order = -100)
         }
 
         private void InitializeInputSystem()
@@ -625,10 +489,10 @@ namespace GDGame
 
             //register all the devices
             inputSystem.Add(new GDKeyboardInput(bindings));
-            //inputSystem.Add(new GDMouseInput(bindings));
-            //inputSystem.Add(new GDGamepadInput(PlayerIndex.One, "Gamepad P1"));
+            inputSystem.Add(new GDMouseInput(bindings));
+            inputSystem.Add(new GDGamepadInput(PlayerIndex.One, "Gamepad P1"));
 
-            _scene.Add(inputSystem);
+            _sceneManager.ActiveScene.Add(inputSystem);
         }
 
         private void InitializeCameras()
@@ -753,55 +617,45 @@ namespace GDGame
 
         }
 
-        private GameObject InitializeModel(Vector3 position,
-            Vector3 eulerRotationDegrees, Vector3 scale,
-            string textureName, string modelName, string objectName)
-        {
-            GameObject gameObject = null;
+        //private GameObject InitializeModel(Vector3 position,
+        //    Vector3 eulerRotationDegrees, Vector3 scale,
+        //    string textureName, string modelName, string objectName)
+        //{
+        //    GameObject gameObject = null;
 
-            gameObject = new GameObject(objectName);
-            gameObject.Transform.TranslateTo(position);
-            gameObject.Transform.RotateEulerBy(eulerRotationDegrees * MathHelper.Pi / 180f);
-            gameObject.Transform.ScaleTo(scale);
+        //    gameObject = new GameObject(objectName);
+        //    gameObject.Transform.TranslateTo(position);
+        //    gameObject.Transform.RotateEulerBy(eulerRotationDegrees * MathHelper.Pi / 180f);
+        //    gameObject.Transform.ScaleTo(scale);
 
-            var model = _modelDictionary.Get(modelName);
-            var texture = _textureDictionary.Get(textureName);
-            var meshFilter = MeshFilterFactory.CreateFromModel(model, _graphics.GraphicsDevice, 0, 0);
-            gameObject.AddComponent(meshFilter);
+        //    var model = _modelDictionary.Get(modelName);
+        //    var texture = _textureDictionary.Get(textureName);
+        //    var meshFilter = MeshFilterFactory.CreateFromModel(model, _graphics.GraphicsDevice, 0, 0);
+        //    gameObject.AddComponent(meshFilter);
 
-            var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+        //    var meshRenderer = gameObject.AddComponent<MeshRenderer>();
 
-            meshRenderer.Material = _matBasicLit;
-            meshRenderer.Overrides.MainTexture = texture;
+        //    meshRenderer.Material = _matBasicLit;
+        //    meshRenderer.Overrides.MainTexture = texture;
 
-            _scene.Add(gameObject);
+        //    _scene.Add(gameObject);
 
-            return gameObject;
-        }
+        //    return gameObject;
+        //}
 
         private void DemoLoadFromJSON()
         {
             var relativeFilePathAndName = "assets/data/single_model_spawn.json";
             List<ModelSpawnData> mList = JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName);
 
-            //load a single model
+            ////load a single model
             //foreach (var d in mList)
             //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
-            relativeFilePathAndName = "assets/data/multi_model_spawn.json";
-            //load multiple models
-            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
-
-            relativeFilePathAndName = "assets/data/multi_environment_spawn.json";
-            //load multiple models
-            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
-
-            relativeFilePathAndName = "assets/data/multi_house_spawn.json";
-            //load multiple models
-            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            //relativeFilePathAndName = "assets/data/multi_model_spawn.json";
+            ////load multiple models
+            //foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
         }
 
         private void InitializeUI()
@@ -853,30 +707,17 @@ namespace GDGame
             IsMouseVisible = false;
         }
 
-        
+
         protected override void Update(GameTime gameTime)
         {
-            //call time update
-            #region Core
             Time.Update(gameTime);
-
-            //update Scene
-            _scene.Update(Time.DeltaTimeSecs);
-            #endregion
-
-            
-
-            base.Update(gameTime);
+            base.Update(gameTime); // SceneManager updates scenes internally
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.CornflowerBlue);
-
-            //just as called update, we now have to call draw to call the draw in the renderingsystem
-            _scene.Draw(Time.DeltaTimeSecs);
-
-            base.Draw(gameTime);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+            base.Draw(gameTime); // SceneManager handles rendering
         }
 
         /// <summary>

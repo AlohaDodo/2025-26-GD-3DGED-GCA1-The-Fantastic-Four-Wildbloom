@@ -292,7 +292,7 @@ namespace GDEngine.Core.Entities
         /// <summary>
         /// Returns a specific system if one is already added; otherwise returns null.
         /// </summary>
-        public T? GetSystem<T>() where T : SystemBase
+        public T? GetSystem<T>() where T : class
         {
             for (int i = 0; i < _systemsAll.Count; i++)
             {
@@ -305,7 +305,7 @@ namespace GDEngine.Core.Entities
         /// <summary>
         /// Attempts to get a specific system; returns true if found.
         /// </summary>
-        public bool TryGetSystem<T>(out T? system) where T : SystemBase
+        public bool TryGetSystem<T>(out T? system) where T : class
         {
             system = GetSystem<T>();
             return system != null;

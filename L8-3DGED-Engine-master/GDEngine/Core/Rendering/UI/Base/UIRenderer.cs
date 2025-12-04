@@ -3,7 +3,7 @@ using GDEngine.Core.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GDEngine.Core.Rendering.UI
+namespace GDEngine.Core.Rendering
 {
     /// <summary>
     /// Named UI layers for SpriteBatch BackToFront sorting (0 = front, 1 = back).
@@ -19,6 +19,7 @@ namespace GDEngine.Core.Rendering.UI
         public static readonly UILayer Cursor = new UILayer(0f);          // on-top pointers/reticles
         public static readonly UILayer MenuFront = new UILayer(0.05f);    // highlights/selection states
         public static readonly UILayer Menu = new UILayer(0.1f);          // menu text/buttons
+        public static readonly UILayer MenuBack = new UILayer(0.2f);          // menu text/buttons
         public static readonly UILayer HUD = new UILayer(0.4f);           // in-game HUD overlays
         public static readonly UILayer Background = new UILayer(1f);      // background images / backdrops
         #endregion
@@ -295,9 +296,9 @@ namespace GDEngine.Core.Rendering.UI
             if (scene == null)
                 return;
 
-            //var uiSystem = scene.GetSystem<UIRenderSystem>();
-            //if (uiSystem != null)
-            //    uiSystem.Add(this);
+            var uiSystem = scene.GetSystem<UIRenderSystem>();
+            if (uiSystem != null)
+                uiSystem.Add(this);
         }
 
         public abstract void Draw(GraphicsDevice device, Camera? camera);

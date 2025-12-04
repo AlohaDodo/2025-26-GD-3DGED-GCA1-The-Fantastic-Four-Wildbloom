@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using GDEngine.Core.Components;
+using GDEngine.Core.Screen;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -45,7 +46,7 @@ namespace GDEngine.Core.Rendering.UI
         private readonly List<string> _lines = new List<string>(32);
 
         // Corner anchoring (re-uses ScreenCorner enum from UIStatsRenderer)
-        //private ScreenCorner _screenCorner = ScreenCorner.BottomLeft;
+        private ScreenCorner _screenCorner = ScreenCorner.BottomLeft;
         private Vector2 _margin = new Vector2(10f, 10f);
         #endregion
 
@@ -98,11 +99,11 @@ namespace GDEngine.Core.Rendering.UI
         /// <summary>
         /// Corner of the game window that this overlay should attach to.
         /// </summary>
-        //public ScreenCorner ScreenCorner
-        //{
-        //    get { return _screenCorner; }
-        //    set { _screenCorner = value; }
-        //}
+        public ScreenCorner ScreenCorner
+        {
+            get { return _screenCorner; }
+            set { _screenCorner = value; }
+        }
 
         /// <summary>
         /// Margin in pixels from the chosen screen corner to the outer edge of the panel.
@@ -179,15 +180,15 @@ namespace GDEngine.Core.Rendering.UI
             float totalWidth = _texturePadding.X * 2f + maxWidth;
             float totalHeight = _texturePadding.Y * 2f + _font.LineSpacing * linesCount;
 
-            //Vector2 panelTopLeft = ComputePanelTopLeft(totalWidth, totalHeight);
+            Vector2 panelTopLeft = ComputePanelTopLeft(totalWidth, totalHeight);
 
-            //_anchor = panelTopLeft + _texturePadding;
+            _anchor = panelTopLeft + _texturePadding;
 
-            //_backRect = new Rectangle(
-            //    (int)MathF.Floor(panelTopLeft.X),
-            //    (int)MathF.Floor(panelTopLeft.Y),
-            //    (int)MathF.Ceiling(totalWidth),
-            //    (int)MathF.Ceiling(totalHeight));
+            _backRect = new Rectangle(
+                (int)MathF.Floor(panelTopLeft.X),
+                (int)MathF.Floor(panelTopLeft.Y),
+                (int)MathF.Ceiling(totalWidth),
+                (int)MathF.Ceiling(totalHeight));
         }
 
         public override void Draw(GraphicsDevice device, Camera? camera)
@@ -247,36 +248,36 @@ namespace GDEngine.Core.Rendering.UI
         #endregion
 
         #region Methods
-        //private Vector2 ComputePanelTopLeft(float panelWidth, float panelHeight)
-        //{
-        //    if (_graphicsDevice == null)
-        //        return _margin;
+        private Vector2 ComputePanelTopLeft(float panelWidth, float panelHeight)
+        {
+            if (_graphicsDevice == null)
+                return _margin;
 
-        //    Viewport vp = _graphicsDevice.Viewport;
+            Viewport vp = _graphicsDevice.Viewport;
 
-        //    switch (_screenCorner)
-        //    {
-        //        case ScreenCorner.TopLeft:
-        //            return new Vector2(
-        //                _margin.X,
-        //                _margin.Y);
+            switch (_screenCorner)
+            {
+                case ScreenCorner.TopLeft:
+                    return new Vector2(
+                        _margin.X,
+                        _margin.Y);
 
-        //        case ScreenCorner.TopRight:
-        //            return new Vector2(
-        //                vp.Width - panelWidth - _margin.X,
-        //                _margin.Y);
+                case ScreenCorner.TopRight:
+                    return new Vector2(
+                        vp.Width - panelWidth - _margin.X,
+                        _margin.Y);
 
-        //        case ScreenCorner.BottomLeft:
-        //            return new Vector2(
-        //                _margin.X,
-        //                vp.Height - panelHeight - _margin.Y);
+                case ScreenCorner.BottomLeft:
+                    return new Vector2(
+                        _margin.X,
+                        vp.Height - panelHeight - _margin.Y);
 
-        //        default: // BottomRight
-        //            return new Vector2(
-        //                vp.Width - panelWidth - _margin.X,
-        //                vp.Height - panelHeight - _margin.Y);
-        //    }
-        //}
+                default: // BottomRight
+                    return new Vector2(
+                        vp.Width - panelWidth - _margin.X,
+                        vp.Height - panelHeight - _margin.Y);
+            }
+        }
         #endregion
     }
 }

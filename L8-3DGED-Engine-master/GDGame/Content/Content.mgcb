@@ -826,6 +826,30 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/mainmenu.PNG;Assets/Textures/UI/Backgrounds/mainmenu
 
+#begin Assets/Textures/UI/Backgrounds/mainMenuWildBloom.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/mainMenuWildBloom.png;Assets/Textures/UI/Backgrounds/mainMenuWildBloom
+
+#begin Assets/Textures/UI/Backgrounds/Professor.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/Professor.png;Assets/Textures/UI/Backgrounds/Professor
+
 #begin Assets/Textures/UI/Controls/genericbtn.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -861,6 +885,1446 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Controls/ui_progress_32_8.png;Assets/Textures/UI/Controls/ui_progress_32_8
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Bottom) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Bottom) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Bottom) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Left) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Left) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Left) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Right) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Right) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Right) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Top) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Top) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Circle (Top) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Circle Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Circle Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Circle Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Left) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Left) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Left) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Middle) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Middle) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Middle) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Right) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Right) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Horizontal (Right) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Bottom) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Bottom) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Bottom) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Middle) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Middle) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Middle) Icon
+
+#begin Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Top) Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Top) Icon.png;Assets/Textures/UI/Gradients/Free Flat Gradient Vertical (Top) Icon
+
+#begin Assets/Textures/UI/Icons/Base/white_1x1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Base/white_1x1.png;Assets/Textures/UI/Icons/Base/white_1x1
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_1.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_1
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_10.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_10.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_10
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_11.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_11.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_11
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_12.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_12.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_12
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_13.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_13.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_13
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_14.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_14.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_14
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_15.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_15.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_15
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_16.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_16.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_16
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_17.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_17.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_17
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_18.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_18.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_18
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_19.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_19.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_19
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_2.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_2
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_20.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_20.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_20
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_21.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_21.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_21
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_22.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_22.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_22
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_23.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_23.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_23
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_24.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_24.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_24
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_25.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_25.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_25
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_26.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_26.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_26
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_27.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_27.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_27
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_28.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_28.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_28
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_29.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_29.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_29
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_3.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_3
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_30.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_30.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_30
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_4.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_4
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_5.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_5
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_6.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_6
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_7.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_7
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_8.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_8
+
+#begin Assets/Textures/UI/Icons/Buttons/Oval/button_oval_9.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Oval/button_oval_9.png;Assets/Textures/UI/Icons/Buttons/Oval/button_oval_9
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_1.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_1
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_10.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_10.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_10
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_11.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_11.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_11
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_12.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_12.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_12
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_13.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_13.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_13
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_14.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_14.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_14
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_15.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_15.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_15
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_16.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_16.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_16
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_17.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_17.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_17
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_18.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_18.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_18
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_19.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_19.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_19
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_2.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_2
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_20.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_20.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_20
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_21.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_21.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_21
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_22.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_22.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_22
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_23.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_23.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_23
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_24.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_24.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_24
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_25.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_25.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_25
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_26.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_26.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_26
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_27.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_27.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_27
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_28.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_28.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_28
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_29.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_29.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_29
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_3.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_3
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_30.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_30.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_30
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_4.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_4
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_5.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_5
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_6.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_6
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_7.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_7
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_8.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_8
+
+#begin Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_9.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_9.png;Assets/Textures/UI/Icons/Buttons/Rectangle/button_rectangle_9
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_1.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_1
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_10.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_10.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_10
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_11.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_11.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_11
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_12.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_12.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_12
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_13.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_13.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_13
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_14.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_14.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_14
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_15.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_15.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_15
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_16.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_16.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_16
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_17.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_17.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_17
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_18.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_18.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_18
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_19.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_19.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_19
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_2.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_2
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_20.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_20.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_20
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_21.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_21.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_21
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_22.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_22.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_22
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_23.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_23.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_23
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_24.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_24.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_24
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_25.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_25.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_25
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_26.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_26.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_26
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_27.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_27.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_27
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_28.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_28.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_28
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_29.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_29.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_29
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_3.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_3
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_30.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_30.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_30
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_4.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_4
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_5.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_5
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_6.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_6
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_7.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_7
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_8.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_8
+
+#begin Assets/Textures/UI/Icons/Buttons/Square/button_square_9.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Buttons/Square/button_square_9.png;Assets/Textures/UI/Icons/Buttons/Square/button_square_9
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 E Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 E Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 E Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 N Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 N Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 N Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 NE Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 NE Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 NE Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 NW Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 NW Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 NW Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 S Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 S Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 S Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 SE Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 SE Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 SE Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 SW Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 SW Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 SW Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 W Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 W Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Arrow 4 W Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Toggle Left Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Toggle Left Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Toggle Left Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Toggle Right Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Toggle Right Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Toggle Right Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Volume 0 Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Volume 0 Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Volume 0 Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Volume 1 Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Volume 1 Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Volume 1 Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Volume 2 Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Volume 2 Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Volume 2 Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Volume 3 Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Volume 3 Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Volume 3 Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Volume 4 Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Volume 4 Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Volume 4 Icon
+
+#begin Assets/Textures/UI/Icons/Other/Free Flat Volume 5 Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Other/Free Flat Volume 5 Icon.png;Assets/Textures/UI/Icons/Other/Free Flat Volume 5 Icon
+
+#begin Assets/Textures/UI/Icons/Slider/Free Flat Hyphen Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Slider/Free Flat Hyphen Icon.png;Assets/Textures/UI/Icons/Slider/Free Flat Hyphen Icon
+
+#begin Assets/Textures/UI/Icons/Slider/Free Flat Toggle Thumb Centre Icon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Icons/Slider/Free Flat Toggle Thumb Centre Icon.png;Assets/Textures/UI/Icons/Slider/Free Flat Toggle Thumb Centre Icon
 
 #begin Assets/Textures/UI/Mouse/Crosshair_01.png
 /importer:TextureImporter

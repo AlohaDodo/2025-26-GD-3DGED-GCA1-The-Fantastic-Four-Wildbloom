@@ -1,7 +1,7 @@
 ﻿using GDEngine.Core.Components;
+using GDEngine.Core.Events;
 using GDEngine.Core.Systems;
 using Microsoft.Xna.Framework;
-using GDEngine.Core.Collections;
 
 namespace GDEngine.Core.Rendering.UI
 {
@@ -430,14 +430,23 @@ namespace GDEngine.Core.Rendering.UI
             if (scene == null)
                 return;
 
-            //var uiEventSystem = scene.GetSystem<EventSystem>();
-            //if (uiEventSystem != null)
-            //    uiEventSystem.Add(this);
+            var uiEventSystem = scene.GetSystem<UIEventSystem>();
+            if (uiEventSystem != null)
+                uiEventSystem.Add(this);
         }
 
 
         protected override void OnEnabled()
         {
+            // Ensure we are registered with the UIEventSystem whenever we are enabled.
+            var scene = GameObject?.Scene;
+            if (scene != null)
+            {
+                var uiEventSystem = scene.GetSystem<UIEventSystem>();
+                if (uiEventSystem != null)
+                    uiEventSystem.Add(this);   // safe: Add() checks Contains before adding
+            }
+
             if (_interactable)
                 TransitionToState(_isPointerInside ? UISelectionState.Highlighted : UISelectionState.Normal);
             else
@@ -453,10 +462,11 @@ namespace GDEngine.Core.Rendering.UI
             if (scene == null)
                 return;
 
-            //var uiEventSystem = scene.GetSystem<EventSystem>();
-            //if (uiEventSystem != null)
-            //    uiEventSystem.Remove(this);
+            var uiEventSystem = scene.GetSystem<UIEventSystem>();
+            if (uiEventSystem != null)
+                uiEventSystem.Remove(this);
         }
+
 
         #endregion
 
