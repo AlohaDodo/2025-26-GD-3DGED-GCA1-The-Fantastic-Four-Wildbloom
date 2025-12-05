@@ -87,6 +87,14 @@ namespace GDEngine.Core.Components
             }
         }
 
+        public int ChildCount
+        {
+            get
+            {
+                return Children.Count;
+            }
+        }
+
         /// <summary>
         /// Local TRS matrix (cached).
         /// </summary>

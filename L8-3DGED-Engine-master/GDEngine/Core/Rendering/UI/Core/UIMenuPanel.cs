@@ -1,11 +1,10 @@
-﻿using GDEngine.Core.Components;
+﻿using System;
+using System.Collections.Generic;
+using GDEngine.Core.Components;
 using GDEngine.Core.Entities;
 using GDEngine.Core.Rendering.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SharpDX.Direct3D9;
-using System;
-using System.Collections.Generic;
 
 namespace GDEngine.Core.Rendering.UI
 {
@@ -191,7 +190,7 @@ namespace GDEngine.Core.Rendering.UI
             // Label
             UIText label = go.AddComponent<UIText>();
             label.Font = font;
-            label.FallbackColor = textColor ?? Color.Black;
+            label.FallbackColor = textColor ?? Color.White;
             label.DropShadow = true;
             label.LayerDepth = UILayer.MenuFront;
 
@@ -274,7 +273,7 @@ namespace GDEngine.Core.Rendering.UI
             // Label, to the left, vertically centered
             UIText label = sliderRoot.AddComponent<UIText>();
             label.Font = font;
-            label.FallbackColor = textColor ?? Color.Black;
+            label.FallbackColor = textColor ?? Color.White;
             label.DropShadow = true;
             label.LayerDepth = UILayer.MenuFront;
 

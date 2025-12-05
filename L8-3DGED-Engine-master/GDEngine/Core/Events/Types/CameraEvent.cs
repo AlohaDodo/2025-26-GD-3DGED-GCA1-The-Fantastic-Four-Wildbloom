@@ -1,14 +1,14 @@
-﻿namespace GDEngine.Core.Events
-{
-    public class CameraEvent
+﻿    namespace GDEngine.Core.Events
     {
-        private string targetCameraName;
-
-        public CameraEvent(string targetCameraName)
+        public class CameraEvent
         {
-            this.targetCameraName = targetCameraName;
-        }
+            private string targetCameraName;
 
-        public string TargetCameraName { get => targetCameraName; set => targetCameraName = value; }
+            public CameraEvent(string targetCameraName)
+            {
+                this.targetCameraName = targetCameraName;
+            }
+
+            public string TargetCameraName { get => targetCameraName; set => targetCameraName = value; }
+        }
     }
-}

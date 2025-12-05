@@ -1,10 +1,11 @@
 ﻿#nullable enable
 using GDEngine.Core.Components;
 using GDEngine.Core.Rendering.Base;
+using GDEngine.Core.Rendering.UI;
 using GDEngine.Core.Systems;
 using GDEngine.Core.Utilities;
 
-namespace GDEngine.Core.Rendering.UI.Info
+namespace GDEngine.Core.Rendering
 {
     /// <summary>
     /// UI helper component that performs a physics raycast through the reticle

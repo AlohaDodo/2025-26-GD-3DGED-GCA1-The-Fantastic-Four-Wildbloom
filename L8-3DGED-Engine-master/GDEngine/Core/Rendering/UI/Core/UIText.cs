@@ -1,9 +1,10 @@
 ﻿using GDEngine.Core.Components;
+using GDEngine.Core.Rendering.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace GDEngine.Core.Rendering.UI
+namespace GDEngine.Core.Rendering
 {
     /// <summary>
     /// Generic UI text renderer that draws a string at a position supplied by a delegate.
@@ -80,6 +81,8 @@ namespace GDEngine.Core.Rendering.UI
         public bool DropShadow { get => _dropShadow; set => _dropShadow = value; }
 
         public Color FallbackColor { get => _fallbackColor; set => _fallbackColor = value; }
+        public string Text { get; set; }
+        public Vector2 Position { get; set; }
         #endregion
 
         #region Constructors

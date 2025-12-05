@@ -7,8 +7,8 @@ using GDEngine.Core.Components;
 using GDEngine.Core.Debug;
 using GDEngine.Core.Entities;
 using GDEngine.Core.Events;
-using GDEngine.Core.Events.Types;
 using GDEngine.Core.Factories;
+
 using GDEngine.Core.Input.Data;
 using GDEngine.Core.Input.Devices;
 using GDEngine.Core.Managers;
@@ -27,7 +27,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
 using Color = Microsoft.Xna.Framework.Color;
+
 
 namespace GDGame
 {
@@ -88,9 +91,9 @@ namespace GDGame
 
             // Scene to hold game objects
             InitializeScene();
+            _sceneManager.AddScene(_scene.Name, _scene);
+            _sceneManager.SetActiveScene(_scene.Name);
 
-            // Camera, UI, Menu, Physics, Rendering etc.
-            InitializeSystems();
 
             // Camera event listener to handle camera events
             InitializeCameraManagers();
@@ -101,8 +104,8 @@ namespace GDGame
             //game manager, camera changer, FSM, AI
             //InitializeManagers();
 
-            DemoLoadFromJSON();
 
+            DemoLoadFromJSON();
             // Setup world
             int scale = 100;
             InitializeSkyParent();
@@ -142,6 +145,12 @@ namespace GDGame
                 ground.Transform.TranslateTo(new Vector3(0, -1, 0));
                 ground.Transform.RotateEulerBy(new Vector3(MathHelper.ToRadians(-90), 0, 0));
                 ground.Transform.ScaleTo(Vector3.One);
+
+
+                // Camera, UI, Menu, Physics, Rendering etc.
+                InitializeSystems();
+                // All cameras we want in the game are loaded now and one set as active
+                InitializeCameras();
 
                 // 7. Add to scene
                 _scene.Add(ground);
@@ -361,6 +370,8 @@ namespace GDGame
 
         private void InitializeSystems()
         {
+
+            var activeScene = _sceneManager.ActiveScene;
             InitializePhysicsSystem();
             InitializePhysicsDebugSystem(false);
             InitializeEventSystem();  //propagate events  
@@ -672,6 +683,111 @@ namespace GDGame
         private void InitializeUI()
         {
             InitializeUIReticleRenderer();
+            InitializeUIBackgroundBox();
+            InitializePartyUI();
+            InitializeSubtitles();
+        }
+
+        private void InitializeSubtitles()
+        {
+            var ui = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
+
+            // ===== Background Box =====
+            var bgGO = new GameObject("SubtitleBackground");
+            var bgSprite = bgGO.AddComponent<UISprite>();
+
+            bgSprite.Texture = _textureDictionary.Get("crate1");
+            bgSprite.Size = new Vector2(800, 120);
+
+            bgSprite.Position = new Vector2(
+                (_graphics.PreferredBackBufferWidth / 2f) - 400f,
+                _graphics.PreferredBackBufferHeight - 150f
+            );
+
+            bgSprite.LayerDepth = UILayer.MenuBack;  // Behind text
+
+            ui.Add(bgSprite);
+            _scene.Add(bgGO);
+
+            // ===== Text =====
+            var textGO = new GameObject("SubtitleText");
+            var text = textGO.AddComponent<UIText>();
+
+            text.Font = _fontDictionary.Get("Berlin");
+            text.Text = "This is a subtitle test message.";
+            text.Color = Color.White;
+            text.Anchor = TextAnchor.TopLeft;
+
+            text.Position = new Vector2(
+                bgSprite.Position.X + 20f,
+                bgSprite.Position.Y + 20f
+            );
+
+            text.LayerDepth = UILayer.Menu; // In front of bg
+
+            ui.Add(text);
+            _scene.Add(textGO);
+        }
+
+
+        private void InitializePartyUI()
+        {
+            var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
+
+            string[] members = { "crate1", "crate1", "crate1" };
+            float size = 64f;
+            float spacing = 10f;
+
+            for (int i = 0; i < members.Length; i++)
+            {
+                var go = new GameObject($"PartyPortrait_{i}");
+                var sprite = go.AddComponent<UIRotatedSprite>();
+
+                sprite.Texture = _textureDictionary.Get(members[i]);
+                sprite.Size = new Vector2(size, size);
+
+                // right side middle  
+                sprite.Position = new Vector2(
+                    _graphics.PreferredBackBufferWidth - (size + 20),
+                    _graphics.PreferredBackBufferHeight / 2 + (i * (size + spacing))
+                );
+
+                // rotate 90 degrees clockwise
+                sprite.Rotation = MathF.PI / 2f;
+
+                uiRender.Add(sprite);
+                _scene.Add(go);
+            }
+        }
+
+
+        private void InitializeUIBackgroundBox()
+        {
+            var uiRenderSystem = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
+
+            // Background Box
+            var backgroundGO = new GameObject("UIBackgroundBox");
+            var backgroundSprite = backgroundGO.AddComponent<UISprite>();
+
+            backgroundSprite.Texture = _textureDictionary.Get("crate1"); // or any existing texture
+            backgroundSprite.Position = new Vector2(10, 10);
+            backgroundSprite.Size = new Vector2(300, 100);
+
+            uiRenderSystem.Add(backgroundSprite);
+            _scene.Add(backgroundGO);
+
+            // Text Box
+            var textGO = new GameObject("UITextBox");
+            var textComponent = textGO.AddComponent<UIText>();
+
+            textComponent.Font = _fontDictionary.Get("default_font");
+            textComponent.Text = "Hello, welcome to the GDGame engine demo!\nUse WASD to move, mouse to look around.\nHave fun!";
+            textComponent.Position = new Vector2(20, 20);
+            textComponent.Color = Color.White;
+            textComponent.Anchor = TextAnchor.TopLeft;
+
+            uiRenderSystem.Add(textComponent);
+            _scene.Add(textGO);
         }
 
         private void InitializeUIReticleRenderer()
