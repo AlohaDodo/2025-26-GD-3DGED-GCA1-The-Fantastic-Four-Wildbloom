@@ -20,6 +20,26 @@
     ],
     "textures": [
         {
+            "name": "BouldoiseTXT",
+            "contentPath": "assets/textures/bloomlings/BouldoiseTXT"
+        },
+        {
+            "name": "house1TXT",
+            "contentPath": "assets/textures/environment/house1_color"
+        },
+        {
+            "name": "house3TXT",
+            "contentPath": "assets/textures/environment/house3_color"
+        },
+        {
+            "name": "treeTXT",
+            "contentPath": "assets/textures/environment/treeTXT"
+        },
+        {
+            "name": "fenceTXT",
+            "contentPath": "assets/textures/environment/fenceTXT"
+        },
+        {
             "name": "grass1",
             "contentPath": "assets/textures/foliage/ground/grass1"
         },
@@ -126,16 +146,20 @@
     ],
     "models": [
         {
-            "name": "monkey1",
-            "contentPath": "assets/models/monkey1"
+            "name": "Bouldoise",
+            "contentPath": "assets/models/bloomlings/Bouldoise"
         },
         {
-            "name": "cube",
-            "contentPath": "assets/models/cube"
+            "name": "Donuffin",
+            "contentPath": "assets/models/bloomlings/Donuffin"
         },
         {
-            "name": "teapot",
-            "contentPath": "assets/models/teapot"
+            "name": "Elytrao",
+            "contentPath": "assets/models/bloomlings/Elytrao"
+        },
+        {
+            "name": "Noodlord",
+            "contentPath": "assets/models/bloomlings/Noodlord"
         },
         {
             "name": "house1",

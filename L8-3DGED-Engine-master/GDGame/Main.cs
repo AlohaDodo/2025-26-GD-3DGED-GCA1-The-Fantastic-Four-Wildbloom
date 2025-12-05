@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GDEngine.Core;
 using GDEngine.Core.Audio;
+using GDEngine.Core.Audio.Events;
 using GDEngine.Core.Collections;
 using GDEngine.Core.Components;
 using GDEngine.Core.Debug;
@@ -47,7 +48,7 @@ namespace GDGame
 
         //Menu feilds
         private LayerMask _collisionDebugMask = LayerMask.All;
-        private MenuManager _menuManager; 
+        private MenuManager _menuManager;
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -60,7 +61,7 @@ namespace GDGame
 
         protected override void Initialize()
         {
-           
+
             #region Core
 
             // Give the game a name
@@ -373,7 +374,7 @@ namespace GDGame
                                            //  InitializeNavMeshSystem();
 
             // Play BGM immediately when game starts
-            //EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
+            EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
 
         }
 
@@ -499,7 +500,7 @@ namespace GDGame
         {
             GameObject cameraGO = null;
             Camera camera = null;
-            
+
             #region First-person camera
             var position = new Vector3(0, 5, 25);
 
@@ -617,45 +618,55 @@ namespace GDGame
 
         }
 
-        //private GameObject InitializeModel(Vector3 position,
-        //    Vector3 eulerRotationDegrees, Vector3 scale,
-        //    string textureName, string modelName, string objectName)
-        //{
-        //    GameObject gameObject = null;
+        private GameObject InitializeModel(Vector3 position,
+            Vector3 eulerRotationDegrees, Vector3 scale,
+            string textureName, string modelName, string objectName)
+        {
+            GameObject gameObject = null;
 
-        //    gameObject = new GameObject(objectName);
-        //    gameObject.Transform.TranslateTo(position);
-        //    gameObject.Transform.RotateEulerBy(eulerRotationDegrees * MathHelper.Pi / 180f);
-        //    gameObject.Transform.ScaleTo(scale);
+            gameObject = new GameObject(objectName);
+            gameObject.Transform.TranslateTo(position);
+            gameObject.Transform.RotateEulerBy(eulerRotationDegrees * MathHelper.Pi / 180f);
+            gameObject.Transform.ScaleTo(scale);
 
-        //    var model = _modelDictionary.Get(modelName);
-        //    var texture = _textureDictionary.Get(textureName);
-        //    var meshFilter = MeshFilterFactory.CreateFromModel(model, _graphics.GraphicsDevice, 0, 0);
-        //    gameObject.AddComponent(meshFilter);
+            var model = _modelDictionary.Get(modelName);
+            var texture = _textureDictionary.Get(textureName);
+            var meshFilter = MeshFilterFactory.CreateFromModel(model, _graphics.GraphicsDevice, 0, 0);
+            gameObject.AddComponent(meshFilter);
 
-        //    var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+            var meshRenderer = gameObject.AddComponent<MeshRenderer>();
 
-        //    meshRenderer.Material = _matBasicLit;
-        //    meshRenderer.Overrides.MainTexture = texture;
+            meshRenderer.Material = _matBasicLit;
+            meshRenderer.Overrides.MainTexture = texture;
 
-        //    _scene.Add(gameObject);
+            _scene.Add(gameObject);
 
-        //    return gameObject;
-        //}
+            return gameObject;
+        }
 
         private void DemoLoadFromJSON()
         {
             var relativeFilePathAndName = "assets/data/single_model_spawn.json";
             List<ModelSpawnData> mList = JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName);
 
-            ////load a single model
-            //foreach (var d in mList)
-            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            //load a single model
+            foreach (var d in mList)
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
-            //relativeFilePathAndName = "assets/data/multi_model_spawn.json";
-            ////load multiple models
-            //foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            relativeFilePathAndName = "assets/data/multi_model_spawn.json";
+            //load multiple models
+            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+
+            relativeFilePathAndName = "assets/data/multi_environment_spawn.json";
+            //load multiple models
+            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+
+            relativeFilePathAndName = "assets/data/multi_house_spawn.json";
+            //load multiple models
+            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
         }
 
         private void InitializeUI()
@@ -680,12 +691,12 @@ namespace GDGame
             uiReticleGO.AddComponent(reticle);
 
             var textRenderer = uiReticleGO.AddComponent<UIText>();
-            textRenderer.Font = uiFont;         
+            textRenderer.Font = uiFont;
             textRenderer.Offset = new Vector2(0, 30);  // Position text below reticle
             textRenderer.Color = Color.White;
             textRenderer.PositionProvider = () => _graphics.GraphicsDevice.Viewport.GetCenter();
             textRenderer.Anchor = TextAnchor.Center;
-            
+
             var picker = uiReticleGO.AddComponent<UIPickerInfo>();
             picker.HitMask = LayerMask.All;
             picker.MaxDistance = 500f;
