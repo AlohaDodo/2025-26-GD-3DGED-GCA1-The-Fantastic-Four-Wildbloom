@@ -26,7 +26,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
-using System.Collections.Generic;
 using Color = Microsoft.Xna.Framework.Color;
 
 
@@ -50,6 +49,10 @@ namespace GDGame
         //Menu feilds
         private LayerMask _collisionDebugMask = LayerMask.All;
         private MenuManager _menuManager;
+
+        //Cutscene fields
+        private bool _isInCutscene = false;
+        private GameObject _thornCutSceneTexture;
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -518,38 +521,62 @@ namespace GDGame
         {
             GameObject cameraGO = null;
             GameObject cameraThorn = null;
+            GameObject cameraParents = null;
             Camera camera = null;
 
-            #region First-person camera
             var position = new Vector3(0, 5, 25);
 
+            #region First-Person Camera
             //camera GO
             cameraGO = new GameObject(AppData.CAMERA_NAME_FIRST_PERSON);
-
-            //Camera professor thorn cutscene
-            cameraThorn = new GameObject(AppData.CAMERA_THORN_CUTSCENE);
 
             //set position 
             cameraGO.Transform.TranslateTo(position);
 
-            //set position for professor thorn cutscene
-            cameraThorn.Transform.TranslateTo(new Vector3(10, 5, 10));
-
             //add camera component to the GO
             camera = cameraGO.AddComponent<Camera>();
             camera.FarPlane = 1000;
-            ////feed off whatever screen dimensions you set InitializeGraphics
+            //feed off whatever screen dimensions you set InitializeGraphics
             camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
             cameraGO.AddComponent<KeyboardWASDController>();
             cameraGO.AddComponent<MouseYawPitchController>();
 
             // Add it to the scene
             _scene.Add(cameraGO);
-            #endregion
+
             //DO NOT CHANGE - First-person is default active camera
             _scene.SetActiveCamera(AppData.CAMERA_NAME_FIRST_PERSON);
+            #endregion
 
+            #region Thorn Cutscene Camera
+            //camera GO
+            cameraThorn = new GameObject(AppData.CAMERA_THORN_CUTSCENE);
+
+            //set position - to be changed
+            cameraThorn.Transform.TranslateTo(new Vector3(0, 2, 10));
+
+            //add camera component to the GO
+            camera = cameraThorn.AddComponent<Camera>();
+            camera.FarPlane = 1000;
+            //feed off whatever screen dimensions you set InitializeGraphics
+            camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
             _scene.Add(cameraThorn);
+            #endregion
+
+            #region Parent cutscene camera
+            //camera GO
+            cameraParents = new GameObject("CameraParent_Cutscene");
+
+            //set position - to be changed
+            cameraParents.Transform.TranslateTo(new Vector3(0, 0, 0));
+
+            //add camera component to the GO
+            camera = cameraParents.AddComponent<Camera>();
+            camera.FarPlane = 1000;
+            //feed off whatever screen dimensions you set InitializeGraphics
+            camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
+            _scene.Add(cameraParents);
+            #endregion 
         }
 
         /// <summary>
