@@ -182,6 +182,7 @@ namespace GDGame
             _sceneManager.EventBus = EngineContext.Instance.Events;
             // Set paused and publish pause event
             _sceneManager.Paused = true;
+            EngineContext.Instance.Events.Publish(new StopMusicEvent(1.5f));
 
             // Put all components that should be paused to sleep
             EngineContext.Instance.Events.Subscribe<GamePauseChangedEvent>(e =>
@@ -191,6 +192,9 @@ namespace GDGame
                 _sceneManager.ActiveScene.GetSystem<PhysicsSystem>()?.SetPaused(paused);
                 _sceneManager.ActiveScene.GetSystem<PhysicsDebugSystem>()?.SetPaused(paused);
                 _sceneManager.ActiveScene.GetSystem<GameStateSystem>()?.SetPaused(paused);
+
+                
+
             });
         }
 
@@ -230,8 +234,11 @@ namespace GDGame
             _menuManager.PlayRequested += () =>
             {
                 _sceneManager.Paused = false;
+                // Play BGM immediately when game starts
+                EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
                 _menuManager.HideMenus();
             };
+
 
             _menuManager.ExitRequested += () =>
             {
@@ -385,7 +392,7 @@ namespace GDGame
                                            //  InitializeNavMeshSystem();
 
             // Play BGM immediately when game starts
-            EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
+           // EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
 
         }
 
@@ -687,6 +694,8 @@ namespace GDGame
             InitializePartyUI();
             InitializeSubtitles();
         }
+
+        
 
         private void InitializeSubtitles()
         {
