@@ -517,6 +517,7 @@ namespace GDGame
         private void InitializeCameras()
         {
             GameObject cameraGO = null;
+            GameObject cameraThorn = null;
             Camera camera = null;
 
             #region First-person camera
@@ -524,8 +525,16 @@ namespace GDGame
 
             //camera GO
             cameraGO = new GameObject(AppData.CAMERA_NAME_FIRST_PERSON);
+
+            //Camera professor thorn cutscene
+            cameraThorn = new GameObject(AppData.CAMERA_THORN_CUTSCENE);
+
             //set position 
             cameraGO.Transform.TranslateTo(position);
+
+            //set position for professor thorn cutscene
+            cameraThorn.Transform.TranslateTo(new Vector3(10, 5, 10));
+
             //add camera component to the GO
             camera = cameraGO.AddComponent<Camera>();
             camera.FarPlane = 1000;
@@ -539,6 +548,8 @@ namespace GDGame
             #endregion
             //DO NOT CHANGE - First-person is default active camera
             _scene.SetActiveCamera(AppData.CAMERA_NAME_FIRST_PERSON);
+
+            _scene.Add(cameraThorn);
         }
 
         /// <summary>
