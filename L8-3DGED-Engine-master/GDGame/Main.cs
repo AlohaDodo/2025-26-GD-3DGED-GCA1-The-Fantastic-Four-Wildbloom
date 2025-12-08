@@ -811,7 +811,7 @@ namespace GDGame
 
             backgroundSprite.Texture = _textureDictionary.Get("ButtonBox");
             backgroundSprite.Position = new Vector2(10, 200);
-            backgroundSprite.Size = new Vector2(300, 200);
+            backgroundSprite.Size = new Vector2(200, 150);
 
             uiRenderSystem.Add(backgroundSprite);
             _scene.Add(backgroundGO);
