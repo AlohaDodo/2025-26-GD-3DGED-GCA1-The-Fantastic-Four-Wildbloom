@@ -688,6 +688,19 @@ namespace GDGame
             InitializeSubtitles();
         }
 
+
+        private void InitializeBattleUI()
+        {
+            //InitializeBloomlingHealthBar();
+            //InitializeEnemyHealthBar();
+            //InitializebattlePartyUI();
+            //InitializeActionMenuUI();
+            //InitializeBattleStateUI();
+            //InitializeVisualSoundUI();
+
+        }
+
+
         private void InitializeSubtitles()
         {
             var ui = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
