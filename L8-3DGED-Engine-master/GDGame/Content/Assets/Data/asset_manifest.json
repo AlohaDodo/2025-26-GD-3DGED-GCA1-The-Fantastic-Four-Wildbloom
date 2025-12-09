@@ -100,6 +100,10 @@
             "name": "professorThorn",
             "contentPath": "assets/textures/ui/backgrounds/Professor"
         },
+        {
+            "name": "parents",
+            "contentPath": "assets/textures/ui/backgrounds/parentsCutscene"
+        },
         ///UI - SLIDER
         {
             "name": "Free Flat Toggle Thumb Centre Icon",

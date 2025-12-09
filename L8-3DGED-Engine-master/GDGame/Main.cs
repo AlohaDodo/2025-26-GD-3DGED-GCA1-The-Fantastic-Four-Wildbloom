@@ -51,8 +51,10 @@ namespace GDGame
         private MenuManager _menuManager;
 
         //Cutscene fields
-        private bool _isInCutscene = false;
         private GameObject _thornCutSceneTexture;
+        private GameObject _parentsCutSceneTexture;
+        private GameObject _cutsceneImageGo;
+        private UISprite _cutsceneSprite;
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -164,6 +166,9 @@ namespace GDGame
 
             // Setup renderers after all game objects added since ui text may use a gameobject as target
             InitializeUI();
+
+            //Cutscenes
+            CutsceneImage();
 
             // Setup menu
             InitializeMenuManager();
@@ -579,6 +584,66 @@ namespace GDGame
             #endregion 
         }
 
+        private void CutsceneImage()
+        {
+            var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
+            
+            // Thorn Cutscene Image
+            _thornCutSceneTexture = new GameObject("ThornCutsceneImage");
+            var thornSprite = _thornCutSceneTexture.AddComponent<UISprite>();
+
+            //Add texture
+            thornSprite.Texture = _textureDictionary.Get("professorThorn");
+
+            //Set size to cover screen
+            thornSprite.Size = new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+            thornSprite.Position = new Vector2(0, 0);
+
+            //Set layer depth to be on top of other UI elements
+            thornSprite.LayerDepth = UILayer.Cursor; //cursor because always on top of everything including crosshair
+            uiRender.Add(thornSprite);
+            _scene.Add(_thornCutSceneTexture);
+
+            thornSprite.Enabled = false;
+
+            //Parents Cutscene Image
+            _parentsCutSceneTexture = new GameObject("ParentsCutsceneImage");
+            var parentsSprite = _parentsCutSceneTexture.AddComponent<UISprite>();
+
+            //Add texture
+            parentsSprite.Texture = _textureDictionary.Get("parents");
+
+            //Set size to cover screen
+            parentsSprite.Size = new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+            parentsSprite.Position = new Vector2(0, 0);
+
+            //Set layer depth to be on top of other UI elements
+            parentsSprite.LayerDepth = UILayer.Cursor; //cursor because always on top of everything including crosshair
+            uiRender.Add(parentsSprite);
+            _scene.Add(_parentsCutSceneTexture);
+            parentsSprite.Enabled = false;
+        }
+
+        private void ShowThornCutscene()
+        {
+            _thornCutSceneTexture.GetComponent<UISprite>().Enabled = true;
+        }
+
+        private void HideThornCutscene()
+        {
+            _thornCutSceneTexture.GetComponent<UISprite>().Enabled = false;
+        }
+
+        private void ShowParentsCutscene()
+        {
+            _parentsCutSceneTexture.GetComponent<UISprite>().Enabled = true;
+        }
+
+        private void HideParentsCutscene()
+        {
+            _parentsCutSceneTexture.GetComponent<UISprite>().Enabled = false;
+        }
+
         /// <summary>
         /// Add parent root at origin to rotate the sky
         /// </summary>
@@ -886,6 +951,30 @@ namespace GDGame
         {
             Time.Update(gameTime);
             base.Update(gameTime); // SceneManager updates scenes internally
+
+            //checking if the cutscenes images are working
+            var keyboard = Keyboard.GetState();
+
+            if (keyboard.IsKeyDown(Keys.T))
+            {
+                var thornSprite = _thornCutSceneTexture.GetComponent<UISprite>();
+                thornSprite.Enabled = true;
+            }
+            else
+            {
+                var thornSprite = _thornCutSceneTexture.GetComponent<UISprite>();
+                thornSprite.Enabled = false;
+            }
+            if (keyboard.IsKeyDown(Keys.P))
+            {
+                var parentsSprite = _parentsCutSceneTexture.GetComponent<UISprite>();
+                parentsSprite.Enabled = true;
+            }
+            else
+            {
+                var parentsSprite = _parentsCutSceneTexture.GetComponent<UISprite>();
+                parentsSprite.Enabled = false;
+            }
         }
 
         protected override void Draw(GameTime gameTime)
