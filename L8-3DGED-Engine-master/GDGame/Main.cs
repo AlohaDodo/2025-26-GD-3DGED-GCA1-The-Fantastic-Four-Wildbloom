@@ -27,6 +27,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using Color = Microsoft.Xna.Framework.Color;
+using GDGame.Battle;
 
 
 namespace GDGame
@@ -55,6 +56,7 @@ namespace GDGame
         private GameObject _parentsCutSceneTexture;
         private GameObject _cutsceneImageGo;
         private UISprite _cutsceneSprite;
+        private BattleManager _battleManager; // Added battle manager
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -793,10 +795,20 @@ namespace GDGame
         private void InitializeUI()
         {
             InitializeUIReticleRenderer();
-            InitializeUITutorialBox();
-            InitializeUIButtonBox();
-            InitializePartyUI();
+2           InitializePartyUI();
             InitializeSubtitles();
+
+            // Setup simple turn-based battle manager and pass subtitle UIText for status messages.
+            var subtitleGO = _scene.Find((GameObject go) => go.Name.Equals("SubtitleText"));
+            var subtitleText = subtitleGO?.GetComponent<UIText>();
+
+            // Pass scene, model and texture dictionaries and graphics device so BattleManager can spawn assets.
+            _battleManager = new BattleManager(
+                _scene,
+                _modelDictionary,
+                _textureDictionary,
+                GraphicsDevice,
+                subtitleText);
         }
 
 
