@@ -26,7 +26,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
-using System.Collections.Generic;
 using Color = Microsoft.Xna.Framework.Color;
 
 
@@ -50,6 +49,12 @@ namespace GDGame
         //Menu feilds
         private LayerMask _collisionDebugMask = LayerMask.All;
         private MenuManager _menuManager;
+
+        //Cutscene fields
+        private GameObject _thornCutSceneTexture;
+        private GameObject _parentsCutSceneTexture;
+        private GameObject _cutsceneImageGo;
+        private UISprite _cutsceneSprite;
         #endregion
 
         #region Core Methods (Common to all games)     
@@ -161,6 +166,9 @@ namespace GDGame
 
             // Setup renderers after all game objects added since ui text may use a gameobject as target
             InitializeUI();
+
+            //Cutscenes
+            CutsceneImage();
 
             // Setup menu
             InitializeMenuManager();
@@ -517,28 +525,123 @@ namespace GDGame
         private void InitializeCameras()
         {
             GameObject cameraGO = null;
+            GameObject cameraThorn = null;
+            GameObject cameraParents = null;
             Camera camera = null;
 
-            #region First-person camera
             var position = new Vector3(0, 5, 25);
 
+            #region First-Person Camera
             //camera GO
             cameraGO = new GameObject(AppData.CAMERA_NAME_FIRST_PERSON);
+
             //set position 
             cameraGO.Transform.TranslateTo(position);
+
             //add camera component to the GO
             camera = cameraGO.AddComponent<Camera>();
             camera.FarPlane = 1000;
-            ////feed off whatever screen dimensions you set InitializeGraphics
+            //feed off whatever screen dimensions you set InitializeGraphics
             camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
             cameraGO.AddComponent<KeyboardWASDController>();
             cameraGO.AddComponent<MouseYawPitchController>();
 
             // Add it to the scene
             _scene.Add(cameraGO);
-            #endregion
+
             //DO NOT CHANGE - First-person is default active camera
             _scene.SetActiveCamera(AppData.CAMERA_NAME_FIRST_PERSON);
+            #endregion
+
+            #region Thorn Cutscene Camera
+            //camera GO
+            cameraThorn = new GameObject(AppData.CAMERA_THORN_CUTSCENE);
+
+            //set position - to be changed
+            cameraThorn.Transform.TranslateTo(new Vector3(0, 2, 10));
+
+            //add camera component to the GO
+            camera = cameraThorn.AddComponent<Camera>();
+            camera.FarPlane = 1000;
+            //feed off whatever screen dimensions you set InitializeGraphics
+            camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
+            _scene.Add(cameraThorn);
+            #endregion
+
+            #region Parent cutscene camera
+            //camera GO
+            cameraParents = new GameObject("CameraParent_Cutscene");
+
+            //set position - to be changed
+            cameraParents.Transform.TranslateTo(new Vector3(0, 0, 0));
+
+            //add camera component to the GO
+            camera = cameraParents.AddComponent<Camera>();
+            camera.FarPlane = 1000;
+            //feed off whatever screen dimensions you set InitializeGraphics
+            camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
+            _scene.Add(cameraParents);
+            #endregion 
+        }
+
+        private void CutsceneImage()
+        {
+            var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
+            
+            // Thorn Cutscene Image
+            _thornCutSceneTexture = new GameObject("ThornCutsceneImage");
+            var thornSprite = _thornCutSceneTexture.AddComponent<UISprite>();
+
+            //Add texture
+            thornSprite.Texture = _textureDictionary.Get("professorThorn");
+
+            //Set size to cover screen
+            thornSprite.Size = new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+            thornSprite.Position = new Vector2(0, 0);
+
+            //Set layer depth to be on top of other UI elements
+            thornSprite.LayerDepth = UILayer.Cursor; //cursor because always on top of everything including crosshair
+            uiRender.Add(thornSprite);
+            _scene.Add(_thornCutSceneTexture);
+
+            thornSprite.Enabled = false;
+
+            //Parents Cutscene Image
+            _parentsCutSceneTexture = new GameObject("ParentsCutsceneImage");
+            var parentsSprite = _parentsCutSceneTexture.AddComponent<UISprite>();
+
+            //Add texture
+            parentsSprite.Texture = _textureDictionary.Get("parents");
+
+            //Set size to cover screen
+            parentsSprite.Size = new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+            parentsSprite.Position = new Vector2(0, 0);
+
+            //Set layer depth to be on top of other UI elements
+            parentsSprite.LayerDepth = UILayer.Cursor; //cursor because always on top of everything including crosshair
+            uiRender.Add(parentsSprite);
+            _scene.Add(_parentsCutSceneTexture);
+            parentsSprite.Enabled = false;
+        }
+
+        private void ShowThornCutscene()
+        {
+            _thornCutSceneTexture.GetComponent<UISprite>().Enabled = true;
+        }
+
+        private void HideThornCutscene()
+        {
+            _thornCutSceneTexture.GetComponent<UISprite>().Enabled = false;
+        }
+
+        private void ShowParentsCutscene()
+        {
+            _parentsCutSceneTexture.GetComponent<UISprite>().Enabled = true;
+        }
+
+        private void HideParentsCutscene()
+        {
+            _parentsCutSceneTexture.GetComponent<UISprite>().Enabled = false;
         }
 
         /// <summary>
@@ -848,6 +951,30 @@ namespace GDGame
         {
             Time.Update(gameTime);
             base.Update(gameTime); // SceneManager updates scenes internally
+
+            //checking if the cutscenes images are working
+            var keyboard = Keyboard.GetState();
+
+            if (keyboard.IsKeyDown(Keys.T))
+            {
+                var thornSprite = _thornCutSceneTexture.GetComponent<UISprite>();
+                thornSprite.Enabled = true;
+            }
+            else
+            {
+                var thornSprite = _thornCutSceneTexture.GetComponent<UISprite>();
+                thornSprite.Enabled = false;
+            }
+            if (keyboard.IsKeyDown(Keys.P))
+            {
+                var parentsSprite = _parentsCutSceneTexture.GetComponent<UISprite>();
+                parentsSprite.Enabled = true;
+            }
+            else
+            {
+                var parentsSprite = _parentsCutSceneTexture.GetComponent<UISprite>();
+                parentsSprite.Enabled = false;
+            }
         }
 
         protected override void Draw(GameTime gameTime)
