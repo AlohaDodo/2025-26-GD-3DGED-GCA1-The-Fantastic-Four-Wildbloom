@@ -1,6 +1,8 @@
-﻿using GDEngine.Core.Entities;
+﻿using GDEngine.Core.Audio.Events;
+using GDEngine.Core.Entities;
 using GDEngine.Core.Rendering;
 using GDEngine.Core.Rendering.UI;
+using GDEngine.Core.Services;
 using GDEngine.Core.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -392,6 +394,8 @@ namespace GDEngine.Core.Managers
         /// </summary>
         public void ShowMenuRoot()
         {
+
+            EngineContext.Instance.Events.Publish(new StopMusicEvent(1.5f));
             _menuVisible = true;
 
             ShowMainMenu();
@@ -403,6 +407,10 @@ namespace GDEngine.Core.Managers
         /// </summary>
         public void HideMenus()
         {
+
+
+          
+
             _menuVisible = false;
 
             if (_mainMenuPanel != null)

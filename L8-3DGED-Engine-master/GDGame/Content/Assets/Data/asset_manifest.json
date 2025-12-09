@@ -175,6 +175,136 @@
       "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
     }
   ],
+    "textures": [
+        {
+            "name": "BouldoiseTXT",
+            "contentPath": "assets/textures/bloomlings/BouldoiseTXT"
+        },
+        {
+            "name": "house1TXT",
+            "contentPath": "assets/textures/environment/house1_color"
+        },
+        {
+            "name": "house3TXT",
+            "contentPath": "assets/textures/environment/house3_color"
+        },
+        {
+            "name": "treeTXT",
+            "contentPath": "assets/textures/environment/treeTXT"
+        },
+        {
+            "name": "fenceTXT",
+            "contentPath": "assets/textures/environment/fenceTXT"
+        },
+        {
+            "name": "grass1",
+            "contentPath": "assets/textures/foliage/ground/grass1"
+        },
+        {
+            "name": "skybox_back",
+            "contentPath": "assets/textures/skybox/back"
+        },
+        {
+            "name": "skybox_front",
+            "contentPath": "assets/textures/skybox/front"
+        },
+        {
+            "name": "skybox_left",
+            "contentPath": "assets/textures/skybox/left"
+        },
+        {
+            "name": "skybox_right",
+            "contentPath": "assets/textures/skybox/right"
+        },
+        {
+            "name": "skybox_sky",
+            "contentPath": "assets/textures/skybox/sky"
+        },
+        {
+            "name": "crate1",
+            "contentPath": "assets/textures/props/crates/crate1"
+        },
+        {
+            "name": "tree4",
+            "contentPath": "assets/textures/foliage/trees/tree4"
+        },
+        {
+            "name": "checkerboard",
+            "contentPath": "assets/textures/demo/checkerboard"
+        },
+        {
+            "name": "mona lisa",
+            "contentPath": "assets/textures/demo/mona lisa"
+        },
+        //UI - BACKGROUND
+        {
+            "name": "white_1x1",
+            "contentPath": "assets/textures/ui/icons/base/white_1x1"
+        },
+        {
+            "name": "mainMenuWildBloom",
+            "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
+        },
+        {
+            "name": "audio_background",
+            "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
+        },
+        {
+            "name": "controlsmenu",
+            "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
+        },
+        {
+            "name": "professorThorn",
+            "contentPath": "assets/textures/ui/backgrounds/Professor"
+        },
+        {
+            "name": "parents",
+            "contentPath": "assets/textures/ui/backgrounds/parentsCutscene"
+        },
+        ///UI - SLIDER
+        {
+            "name": "Free Flat Toggle Thumb Centre Icon",
+            "contentPath": "assets/textures/ui/icons/slider/Free Flat Toggle Thumb Centre Icon"
+        },
+        {
+            "name": "Free Flat Hyphen Icon",
+            "contentPath": "assets/textures/ui/icons/slider/Free Flat Hyphen Icon"
+        },
+        ///UI - GRADIENTS
+        {
+            "name": "Free Flat Gradient Vertical (Middle) Icon",
+            "contentPath": "assets/textures/ui/gradients/Free Flat Gradient Vertical (Middle) Icon"
+        },
+        ///UI - BUTTONS
+        {
+            "name": "button_rectangle_10",
+            "contentPath": "assets/textures/ui/icons/buttons/rectangle/button_rectangle_10"
+        },
+        {
+            "name": "controlsmenu_monkey",
+            "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+        },
+        {
+            "name": "mouse_reticle",
+            "contentPath": "assets/textures/ui/mouse/reticleClosed"
+        },
+        {
+            "name": "Crosshair_21",
+            "contentPath": "assets/textures/ui/mouse/Crosshair_01"
+        },
+        {
+            "name": "mainmenu",
+            "contentPath": "assets/textures/ui/backgrounds/mainmenu"
+        },
+        {
+            "name": "mainmenu_monkey",
+            "contentPath": "assets/textures/ui/backgrounds/mainmenu_monkey"
+        },
+        {
+            "name": "controlsmenu_monkey",
+            "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+        }
+    ],
     "models": [
         {
             "name": "Bouldoise",
@@ -217,40 +347,48 @@
             "contentPath": "assets/models/environment/path"
         }
     ],
-    "sounds": [
-        {
-            "name": "explosion1",
-            "contentPath": "assets/sounds/Explosion 1"
-        },
-        {
-            "name": "hand_gun1",
-            "contentPath": "assets/sounds/Hand Gun 1"
-        },
-        {
-            "name": "laser_gun_salve",
-            "contentPath": "assets/sounds/Laser Gun Salve"
-        },
-        {
-            "name": "secret_door",
-            "contentPath": "assets/sounds/Secret door"
-        },
-        {
-            "name": "SFX_UI_Click_Designed_Pop_Generic_1",
-            "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Generic_1"
-        },
-        {
-            "name": "SFX_UI_Click_Designed_Pop_Mallet_Open_1",
-            "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Mallet_Open_1"
-        },
-        {
-            "name": "SFX_UI_Click_Designed_Pop_Movement_Open_1",
-            "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Movement_Open_1"
-        },
-        {
-            "name": "SFX_UI_Click_Designed_Pop_Negative_Close_1",
-            "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Negative_Close_1"
-        }
-    ],
+  "sounds": [
+    {
+      "name": "BGM-Village",
+      "contentPath": "assets/sounds/BGM/BGM-Village"
+    },
+    {
+      "name": "explosion1",
+      "contentPath": "assets/sounds/Explosion 1"
+    },
+    {
+      "name": "hand_gun1",
+      "contentPath": "assets/sounds/Hand Gun 1"
+    },
+    {
+      "name": "laser_gun_salve",
+      "contentPath": "assets/sounds/Laser Gun Salve"
+    },
+    {
+      "name": "secret_door",
+      "contentPath": "assets/sounds/Secret door"
+    },
+    {
+      "name": "SFX_UI_Click_Designed_Pop_Generic_1",
+      "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Generic_1"
+    },
+    {
+      "name": "SFX_UI_Click_Designed_Pop_Mallet_Open_1",
+      "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Mallet_Open_1"
+    },
+    {
+      "name": "SFX_UI_Click_Designed_Pop_Movement_Open_1",
+      "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Movement_Open_1"
+    },
+    {
+        "name": "SFX_UI_Click_Designed_Pop_Negative_Close_1",
+        "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Negative_Close_1"
+    },
+    {
+        "name": "VillageAmbience",
+        "contentPath": "assets/sounds/BGM/Village"
+    }
+  ],
     "effects": [
         {
             "name": "ui_test_effect",
