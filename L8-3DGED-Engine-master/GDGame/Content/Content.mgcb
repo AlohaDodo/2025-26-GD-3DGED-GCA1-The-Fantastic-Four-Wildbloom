@@ -766,6 +766,30 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/audiomenu.png;Assets/Textures/UI/Backgrounds/audiomenu
 
+#begin Assets/Textures/UI/Backgrounds/BuldoiseProf.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/BuldoiseProf.png
+
+#begin Assets/Textures/UI/Backgrounds/ButtonBox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/ButtonBox.png
+
 #begin Assets/Textures/UI/Backgrounds/controlsmenu_monkey.jpeg
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -789,6 +813,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/controlsmenu.png;Assets/Textures/UI/Backgrounds/controlsmenu
+
+#begin Assets/Textures/UI/Backgrounds/DonuffinProf.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/DonuffinProf.png
+
+#begin Assets/Textures/UI/Backgrounds/ElytroProf.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/ElytroProf.png
 
 #begin Assets/Textures/UI/Backgrounds/exitmenu.png
 /importer:TextureImporter
@@ -850,6 +898,7 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/mainMenuWildBloom.png;Assets/Textures/UI/Backgrounds/mainMenuWildBloom
 
+#begin Assets/Textures/UI/Backgrounds/NoodleProf.png
 #begin Assets/Textures/UI/Backgrounds/parentsCutscene.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -860,6 +909,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/NoodleProf.png
 /build:Assets/Textures/UI/Backgrounds/parentsCutscene.png;Assets/Textures/UI/Backgrounds/parentsCutscene
 
 #begin Assets/Textures/UI/Backgrounds/Professor.png
@@ -873,6 +923,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/Professor.png;Assets/Textures/UI/Backgrounds/Professor
+
+#begin Assets/Textures/UI/Backgrounds/SubtitleTextBox.jpeg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/SubtitleTextBox.jpeg;Assets/Textures/UI/Backgrounds/SubtitleTextBox
+
+#begin Assets/Textures/UI/Backgrounds/TutorialBox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Textures/UI/Backgrounds/TutorialBox.png
 
 #begin Assets/Textures/UI/Controls/genericbtn.png
 /importer:TextureImporter

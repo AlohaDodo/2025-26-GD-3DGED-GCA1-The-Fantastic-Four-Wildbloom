@@ -793,9 +793,22 @@ namespace GDGame
         private void InitializeUI()
         {
             InitializeUIReticleRenderer();
-            InitializeUIBackgroundBox();
+            InitializeUITutorialBox();
+            InitializeUIButtonBox();
             InitializePartyUI();
             InitializeSubtitles();
+        }
+
+
+        private void InitializeBattleUI()
+        {
+            //InitializeBloomlingHealthBar();
+            //InitializeEnemyHealthBar();
+            //InitializebattlePartyUI();
+            //InitializeActionMenuUI();
+            //InitializeBattleStateUI();
+            //InitializeVisualSoundUI();
+
         }
 
         
@@ -808,7 +821,8 @@ namespace GDGame
             var bgGO = new GameObject("SubtitleBackground");
             var bgSprite = bgGO.AddComponent<UISprite>();
 
-            bgSprite.Texture = _textureDictionary.Get("crate1");
+            bgSprite.Texture = _textureDictionary.Get("SubtitleTextBox");
+
             bgSprite.Size = new Vector2(800, 120);
 
             bgSprite.Position = new Vector2(
@@ -846,7 +860,7 @@ namespace GDGame
         {
             var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
 
-            string[] members = { "crate1", "crate1", "crate1" };
+            string[] members = { "BuldoiseProf", "NoodleProf", "ElytroProf" };
             float size = 64f;
             float spacing = 10f;
 
@@ -864,16 +878,13 @@ namespace GDGame
                     _graphics.PreferredBackBufferHeight / 2 + (i * (size + spacing))
                 );
 
-                // rotate 90 degrees clockwise
-                sprite.Rotation = MathF.PI / 2f;
-
                 uiRender.Add(sprite);
                 _scene.Add(go);
             }
         }
 
 
-        private void InitializeUIBackgroundBox()
+        private void InitializeUITutorialBox()
         {
             var uiRenderSystem = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
 
@@ -881,7 +892,7 @@ namespace GDGame
             var backgroundGO = new GameObject("UIBackgroundBox");
             var backgroundSprite = backgroundGO.AddComponent<UISprite>();
 
-            backgroundSprite.Texture = _textureDictionary.Get("crate1"); // or any existing texture
+            backgroundSprite.Texture = _textureDictionary.Get("TutorialBox"); 
             backgroundSprite.Position = new Vector2(10, 10);
             backgroundSprite.Size = new Vector2(300, 100);
 
@@ -901,6 +912,35 @@ namespace GDGame
             uiRenderSystem.Add(textComponent);
             _scene.Add(textGO);
         }
+        private void InitializeUIButtonBox()
+        {
+            var uiRenderSystem = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
+
+            // Background Box
+            var backgroundGO = new GameObject("UIButtonBackgroundBox");
+            var backgroundSprite = backgroundGO.AddComponent<UISprite>();
+
+            backgroundSprite.Texture = _textureDictionary.Get("ButtonBox");
+            backgroundSprite.Position = new Vector2(10, 200);
+            backgroundSprite.Size = new Vector2(200, 150);
+
+            uiRenderSystem.Add(backgroundSprite);
+            _scene.Add(backgroundGO);
+
+            // Text Box
+            var textGO = new GameObject("UIButtonTextBox");
+            var textComponent = textGO.AddComponent<UIText>();
+
+            textComponent.Font = _fontDictionary.Get("default_font");
+            textComponent.Text = "Click me!";
+            textComponent.Position = new Vector2(20, 130);
+            textComponent.Color = Color.White;
+            textComponent.Anchor = TextAnchor.TopLeft;
+
+            uiRenderSystem.Add(textComponent);
+            _scene.Add(textGO);
+        }
+
 
         private void InitializeUIReticleRenderer()
         {

@@ -18,6 +18,163 @@
             "contentPath": "assets/fonts/menufont"
         }
     ],
+  "textures": [
+    {
+      "name": "BouldoiseTXT",
+      "contentPath": "assets/textures/bloomlings/BouldoiseTXT"
+    },
+    {
+      "name": "house1TXT",
+      "contentPath": "assets/textures/environment/house1_color"
+    },
+    {
+      "name": "house3TXT",
+      "contentPath": "assets/textures/environment/house3_color"
+    },
+    {
+      "name": "treeTXT",
+      "contentPath": "assets/textures/environment/treeTXT"
+    },
+    {
+      "name": "fenceTXT",
+      "contentPath": "assets/textures/environment/fenceTXT"
+    },
+    {
+      "name": "grass1",
+      "contentPath": "assets/textures/foliage/ground/grass1"
+    },
+    {
+      "name": "skybox_back",
+      "contentPath": "assets/textures/skybox/back"
+    },
+    {
+      "name": "skybox_front",
+      "contentPath": "assets/textures/skybox/front"
+    },
+    {
+      "name": "skybox_left",
+      "contentPath": "assets/textures/skybox/left"
+    },
+    {
+      "name": "skybox_right",
+      "contentPath": "assets/textures/skybox/right"
+    },
+    {
+      "name": "skybox_sky",
+      "contentPath": "assets/textures/skybox/sky"
+    },
+    {
+      "name": "crate1",
+      "contentPath": "assets/textures/props/crates/crate1"
+    },
+    {
+      "name": "tree4",
+      "contentPath": "assets/textures/foliage/trees/tree4"
+    },
+    {
+      "name": "checkerboard",
+      "contentPath": "assets/textures/demo/checkerboard"
+    },
+    {
+      "name": "mona lisa",
+      "contentPath": "assets/textures/demo/mona lisa"
+    },
+    //UI - BACKGROUND
+    {
+      "name": "white_1x1",
+      "contentPath": "assets/textures/ui/icons/base/white_1x1"
+    },
+    {
+      "name": "mainMenuWildBloom",
+      "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
+    },
+    {
+      "name": "audio_background",
+      "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
+    },
+    {
+      "name": "controlsmenu",
+      "contentPath": "assets/textures/ui/backgrounds/mainMenuWildBloom"
+    },
+    {
+      "name": "professorThorn",
+      "contentPath": "assets/textures/ui/backgrounds/Professor"
+    },
+    {
+      "name": "SubtitleTextBox",
+      "contentPath": "assets/textures/ui/backgrounds/SubtitleTextBox"
+
+    },
+    {
+      "name": "BuldoiseProf",
+      "contentPath": "assets/textures/ui/backgrounds/BuldoiseProf"
+
+    },
+    {
+      "name": "NoodleProf",
+      "contentPath": "assets/textures/ui/backgrounds/NoodleProf"
+    },
+    {
+      "name": "ElytroProf",
+      "contentPath": "assets/textures/ui/backgrounds/ElytroProf"
+    },
+    {
+      "name": "DonuffinProf",
+      "contentPath": "assets/textures/ui/backgrounds/DonuffinProf"
+    },
+    {
+      "name": "ButtonBox",
+      "contentPath": "assets/textures/ui/backgrounds/ButtonBox"
+    },
+    {
+      "name": "TutorialBox",
+      "contentPath": "assets/textures/ui/backgrounds/TutorialBox"
+    },
+
+    ///UI - SLIDER
+    {
+      "name": "Free Flat Toggle Thumb Centre Icon",
+      "contentPath": "assets/textures/ui/icons/slider/Free Flat Toggle Thumb Centre Icon"
+    },
+    {
+      "name": "Free Flat Hyphen Icon",
+      "contentPath": "assets/textures/ui/icons/slider/Free Flat Hyphen Icon"
+    },
+    ///UI - GRADIENTS
+    {
+      "name": "Free Flat Gradient Vertical (Middle) Icon",
+      "contentPath": "assets/textures/ui/gradients/Free Flat Gradient Vertical (Middle) Icon"
+    },
+    ///UI - BUTTONS
+    {
+      "name": "button_rectangle_10",
+      "contentPath": "assets/textures/ui/icons/buttons/rectangle/button_rectangle_10"
+    },
+    {
+      "name": "controlsmenu_monkey",
+      "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+    },
+    {
+      "name": "mouse_reticle",
+      "contentPath": "assets/textures/ui/mouse/reticleClosed"
+    },
+    {
+      "name": "Crosshair_21",
+      "contentPath": "assets/textures/ui/mouse/Crosshair_01"
+    },
+    {
+      "name": "mainmenu",
+      "contentPath": "assets/textures/ui/backgrounds/mainmenu"
+    },
+    {
+      "name": "mainmenu_monkey",
+      "contentPath": "assets/textures/ui/backgrounds/mainmenu_monkey"
+    },
+    {
+      "name": "controlsmenu_monkey",
+      "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+    }
+  ],
     "textures": [
         {
             "name": "BouldoiseTXT",
