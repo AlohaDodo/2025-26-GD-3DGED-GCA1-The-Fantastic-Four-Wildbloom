@@ -899,7 +899,6 @@
 /build:Assets/Textures/UI/Backgrounds/mainMenuWildBloom.png;Assets/Textures/UI/Backgrounds/mainMenuWildBloom
 
 #begin Assets/Textures/UI/Backgrounds/NoodleProf.png
-#begin Assets/Textures/UI/Backgrounds/parentsCutscene.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -910,6 +909,17 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/NoodleProf.png
+
+#begin Assets/Textures/UI/Backgrounds/parentsCutscene.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
 /build:Assets/Textures/UI/Backgrounds/parentsCutscene.png;Assets/Textures/UI/Backgrounds/parentsCutscene
 
 #begin Assets/Textures/UI/Backgrounds/Professor.png
