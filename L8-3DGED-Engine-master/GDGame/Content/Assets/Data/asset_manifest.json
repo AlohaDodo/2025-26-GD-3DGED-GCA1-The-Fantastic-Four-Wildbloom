@@ -224,8 +224,12 @@
       "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Movement_Open_1"
     },
     {
-      "name": "SFX_UI_Click_Designed_Pop_Negative_Close_1",
-      "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Negative_Close_1"
+        "name": "SFX_UI_Click_Designed_Pop_Negative_Close_1",
+        "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Negative_Close_1"
+    },
+    {
+        "name": "VillageAmbience",
+        "contentPath": "assets/sounds/BGM/Village"
     }
   ],
     "effects": [

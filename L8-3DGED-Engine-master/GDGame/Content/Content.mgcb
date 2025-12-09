@@ -388,6 +388,12 @@
 /processorParam:Quality=Best
 /build:Assets/Sounds/BGM/BGM-Village.mp3
 
+#begin Assets/Sounds/BGM/Village.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Assets/Sounds/BGM/Village.wav;Assets/Sounds/BGM/Village
+
 #begin Assets/Sounds/Explosion 1.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
