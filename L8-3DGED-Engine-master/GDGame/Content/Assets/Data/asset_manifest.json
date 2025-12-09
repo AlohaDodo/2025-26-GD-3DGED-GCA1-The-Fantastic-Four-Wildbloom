@@ -171,8 +171,12 @@
       "contentPath": "assets/textures/ui/backgrounds/mainmenu_monkey"
     },
     {
-      "name": "controlsmenu_monkey",
-      "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+        "name": "controlsmenu_monkey",
+        "contentPath": "assets/textures/ui/backgrounds/controlsmenu_monkey"
+    },
+    {
+        "name": "parentsCutscene",
+        "contentPath": "assets/textures/ui/backgrounds/parentsCutscene"
     }
   ],
   

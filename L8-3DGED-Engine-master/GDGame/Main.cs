@@ -611,7 +611,7 @@ namespace GDGame
             var parentsSprite = _parentsCutSceneTexture.AddComponent<UISprite>();
 
             //Add texture
-            parentsSprite.Texture = _textureDictionary.Get("parents");
+            parentsSprite.Texture = _textureDictionary.Get("parentsCutscene");
 
             //Set size to cover screen
             parentsSprite.Size = new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
