@@ -12,7 +12,6 @@ using System;
 
 namespace GDGame.Battle
 {
-    // Simple, self-contained turn-based manager for a two-character demo.
     // Player controls Bouldoise (press '2' to attack). AI controls Noodlord.
     public sealed class BattleManager
     {
@@ -22,8 +21,6 @@ namespace GDGame.Battle
             public int HP { get; set; }
             public int Attack { get; set; }
             public bool IsPlayer { get; set; }
-
-            // Link to the visual/gameobject spawned in the scene
             public GameObject? GameObject { get; set; }
         }
 
@@ -40,11 +37,6 @@ namespace GDGame.Battle
         private float _aiTimerSeconds;
         private readonly UIText? _statusText;
 
-        /// <summary>
-        /// Create a BattleManager that will spawn Bouldoise & Noodlord from the asset manifest
-        /// (via provided content dictionaries) and attach simple colliders so they can be removed
-        /// when their HP reaches zero.
-        /// </summary>
         public BattleManager(
             Scene scene,
             ContentDictionary<Model> modelDictionary,
@@ -72,28 +64,23 @@ namespace GDGame.Battle
 
         private void SpawnCharacter(Character ch, Vector3 worldPosition, float uniformScale = 1f)
         {
-            // Create GameObject
             var go = new GameObject(ch.Name);
             go.Transform.TranslateTo(worldPosition);
             go.Transform.ScaleTo(new Vector3(uniformScale, uniformScale, uniformScale));
 
-            // Try load model by key (fall back to simple cube quad if missing)
             var model = _models.Get(ch.Name);
             MeshFilter meshFilter;
             if (model != null)
             {
-                // Use first mesh/part
                 meshFilter = MeshFilterFactory.CreateFromModel(model, _graphics, 0, 0);
             }
             else
             {
-                // No model entry found - create a textured cube as fallback
                 meshFilter = MeshFilterFactory.CreateCubeTexturedLit(_graphics);
             }
 
             go.AddComponent(meshFilter);
 
-            // Renderer + material
             var meshRenderer = go.AddComponent<MeshRenderer>();
             var litEffect = new BasicEffect(_graphics)
             {
@@ -107,33 +94,25 @@ namespace GDGame.Battle
             var mat = new Material(litEffect);
             meshRenderer.Material = mat;
 
-            // Try apply texture if available
             var tex = _textures.Get(ch.Name);
             if (tex != null)
                 meshRenderer.Overrides.MainTexture = tex;
 
-            // Add a simple collider sized to the object scale (box)
             var box = go.AddComponent<BoxCollider>();
-            // Use a reasonable default box size scaled by uniformScale
             box.Size = new Vector3(1f, 1f, 1f) * uniformScale;
-            // Make trigger so it doesn't interfere physically (we only want events/visual)
             box.IsTrigger = true;
 
-            // Add RigidBody (kinematic so it doesn't fall) - requires a collider earlier
             var rb = go.AddComponent<RigidBody>();
             rb.BodyType = BodyType.Kinematic;
             rb.UseGravity = false;
 
-            // Register with scene (Awake/Start will run)
             _scene.Add(go);
 
-            // Save link
             ch.GameObject = go;
         }
 
         public void Update(GameTime gameTime)
         {
-            // If battle already decided, do nothing.
             if (_player.HP <= 0 || _ai.HP <= 0)
                 return;
 
@@ -141,7 +120,6 @@ namespace GDGame.Battle
 
             if (_playersTurn)
             {
-                // detect key-down edge for the '2' key
                 if (ks.IsKeyDown(_attackKey) && !_prevKeyboard.IsKeyDown(_attackKey))
                 {
                     DoAttack(_player, _ai);
@@ -151,7 +129,6 @@ namespace GDGame.Battle
             }
             else
             {
-                // AI waits a short delay before attacking to feel turn-based
                 _aiTimerSeconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 if (_aiTimerSeconds >= _aiDelaySeconds)
                 {
@@ -165,7 +142,6 @@ namespace GDGame.Battle
 
         private void DoAttack(Character attacker, Character defender)
         {
-            // Apply damage
             defender.HP -= attacker.Attack;
             if (defender.HP < 0)
                 defender.HP = 0;
@@ -174,17 +150,14 @@ namespace GDGame.Battle
             SetStatus(msg);
             Debug.WriteLine("[Battle] " + msg);
 
-            // If defender died, remove its GameObject (collider present, trigger semantics)
             if (defender.HP == 0)
             {
                 var winMsg = $"{attacker.Name} defeated {defender.Name}!";
                 SetStatus(winMsg);
                 Debug.WriteLine("[Battle] " + winMsg);
 
-                // Remove visual/gameobject from scene so it disappears
                 if (defender.GameObject != null)
                 {
-                    // Defensive: only remove if still present in the scene
                     _scene.Remove(defender.GameObject);
                     defender.GameObject = null;
                 }

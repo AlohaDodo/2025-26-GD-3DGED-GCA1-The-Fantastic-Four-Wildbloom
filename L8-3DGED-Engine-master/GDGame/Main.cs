@@ -795,8 +795,11 @@ namespace GDGame
         private void InitializeUI()
         {
             InitializeUIReticleRenderer();
-2           InitializePartyUI();
+            InitializePartyUI();
             InitializeSubtitles();
+            InitializeUIButtonBox();
+            InitializeUITutorialBox();
+
 
             // Setup simple turn-based battle manager and pass subtitle UIText for status messages.
             var subtitleGO = _scene.Find((GameObject go) => go.Name.Equals("SubtitleText"));
@@ -1002,6 +1005,10 @@ namespace GDGame
         protected override void Update(GameTime gameTime)
         {
             Time.Update(gameTime);
+
+            // Update battle manager so player can press "2" to attack and AI can respond.
+            _battleManager?.Update(gameTime);
+
             base.Update(gameTime); // SceneManager updates scenes internally
 
             //checking if the cutscenes images are working
