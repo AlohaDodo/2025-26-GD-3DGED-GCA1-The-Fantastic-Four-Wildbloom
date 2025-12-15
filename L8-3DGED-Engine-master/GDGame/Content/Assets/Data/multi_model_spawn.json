@@ -6,11 +6,11 @@
   },
     "spawns": [
         {
-            "position": [
-                -10,
-                5,
-                0
-            ],
+          "position": [
+            0,
+            22.9,
+            -31.9
+          ],
             "rotationDegrees": [
                 0,
                 0,
