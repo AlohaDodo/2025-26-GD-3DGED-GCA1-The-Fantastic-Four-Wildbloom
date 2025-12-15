@@ -98,7 +98,7 @@ namespace GDEngine.Core.Components
             // Without this, the player could float or fall due to Transform manipulations or physics
             // Here we simply overwrite the Y position to keep the player grounded at Y = 0.5
             Vector3 pos = Transform.Position;
-            Transform.TranslateTo(new Vector3(pos.X, 0.5f, pos.Z));
+            Transform.TranslateTo(new Vector3(pos.X, 5f, pos.Z));
         }
 
         #endregion
