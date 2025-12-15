@@ -243,7 +243,7 @@ namespace GDGame
             {
                 _sceneManager.Paused = false;
                 // Play BGM immediately when game starts
-                EngineContext.Instance.Events.Publish(new PlayMusicEvent("NewVillage", 0.7f, 1.5f));
+                EngineContext.Instance.Events.Publish(new PlayMusicEvent("NewVillage", 0.3f, 0.7f));
                 _menuManager.HideMenus();
             };
 
