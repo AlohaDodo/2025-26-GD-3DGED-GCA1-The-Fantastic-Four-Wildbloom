@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
 namespace GDEngine.Core.Managers
 {
     /// <summary>
@@ -247,7 +248,7 @@ namespace GDEngine.Core.Managers
             Vector2 viewportSize = new Vector2(backBufferWidth, backBufferHeight);
 
             // Basic layout: top-left-ish anchor + consistent item size
-            Vector2 panelPosition = new Vector2((backBufferWidth - 390) / 2, 200f);
+            Vector2 panelPosition = new Vector2((backBufferWidth - 390) / 2, 500f);
             Vector2 itemSize = new Vector2(390, 96f);
             float spacing = 20f;
 
@@ -439,33 +440,56 @@ namespace GDEngine.Core.Managers
 
         private void OnPlayClicked()
         {
+            EngineContext.Instance.Events.Publish(
+       new PlaySfxEvent("ui_ClickSound", 0.5f)
+         );
             PlayRequested?.Invoke();
         }
 
         private void OnAudioClicked()
         {
+            EngineContext.Instance.Events.Publish(
+                new PlaySfxEvent("ui_ClickSound", 0.5f)
+            );
             ShowAudioMenu();
         }
 
         private void OnControlsClicked()
         {
+            EngineContext.Instance.Events.Publish(
+                new PlaySfxEvent("ui_ClickSound", 0.5f)
+            );
+
             ShowControlsMenu();
         }
 
-        private void OnExitClicked()
+
+            private void OnExitClicked()
         {
+            EngineContext.Instance.Events.Publish(
+            new PlaySfxEvent("ui_ClickSound", 0.5f)
+            );
             ExitRequested?.Invoke();
-        }
+            }
 
         private void OnBackToMainFromAudio()
         {
+            EngineContext.Instance.Events.Publish(
+                new PlaySfxEvent("ui_ClickSound", 0.5f)
+            );
+
             ShowMainMenu();
         }
 
         private void OnBackToMainFromControls()
         {
+            EngineContext.Instance.Events.Publish(
+                new PlaySfxEvent("ui_ClickSound", 0.5f)
+            );
+
             ShowMainMenu();
         }
+
 
         private void OnMusicSliderChanged(float value)
         {
@@ -505,6 +529,11 @@ namespace GDEngine.Core.Managers
             {
                 if (IsMenuVisible)
                 {
+                  
+                    EngineContext.Instance.Events.Publish(
+                        new PlaySfxEvent("ui_cancel_clean", 0.9f)
+                    );
+
                     _sceneManager.Paused = false;
                     HideMenus();
                 }
@@ -515,6 +544,7 @@ namespace GDEngine.Core.Managers
                 }
             }
         }
+
 
         /// <summary>
         /// Show or hide the HUD reticle and flip OS mouse visibility.
