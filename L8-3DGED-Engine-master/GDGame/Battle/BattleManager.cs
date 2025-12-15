@@ -55,11 +55,27 @@ namespace GDGame.Battle
             _playersTurn = true;
             _prevKeyboard = Keyboard.GetState();
 
-            // Spawn visual representations in the scene
-            SpawnCharacter(_player, new Vector3(-2f, 0f, 0f), 1.25f);
-            SpawnCharacter(_ai, new Vector3(2f, 0f, 0f), 1.25f);
+            SpawnCharacter(_player, new Vector3(-5f, -1f, 0f), GetPreferredScale(_player.Name));
+            SpawnCharacter(_ai, new Vector3(5f, 4f, 0f), GetPreferredScale(_ai.Name));
 
             SetStatus($"{_player.Name} vs {_ai.Name} — {_player.Name} to act. Press '2' to attack.");
+        }
+
+
+        private static float GetPreferredScale(string assetName)
+        {
+            if (string.IsNullOrWhiteSpace(assetName))
+                return 1.0f;
+
+            switch (assetName.Trim())
+            {
+                case "Bouldoise":
+                    return 3.0f;
+                case "Noodlord":
+                    return 3.0f;
+                default:
+                    return 1.25f;
+            }
         }
 
         private void SpawnCharacter(Character ch, Vector3 worldPosition, float uniformScale = 1f)
@@ -94,7 +110,26 @@ namespace GDGame.Battle
             var mat = new Material(litEffect);
             meshRenderer.Material = mat;
 
-            var tex = _textures.Get(ch.Name);
+            Texture2D? tex = null;
+            string[] textureCandidates = new[]
+            {
+                ch.Name,
+                ch.Name + "TXT",
+                ch.Name + "Tex",
+                ch.Name + "_diff",
+                ch.Name.ToLowerInvariant(),
+            };
+
+            foreach (var key in textureCandidates)
+            {
+                if (string.IsNullOrWhiteSpace(key))
+                    continue;
+
+                tex = _textures.Get(key);
+                if (tex != null)
+                    break;
+            }
+
             if (tex != null)
                 meshRenderer.Overrides.MainTexture = tex;
 
@@ -164,7 +199,7 @@ namespace GDGame.Battle
             }
             else if (attacker.IsPlayer)
             {
-                SetStatus($"{attacker.Name} attacked. {defender.Name} HP: {defender.    HP}. Noodlord will act shortly.");
+                SetStatus($"{attacker.Name} attacked. {defender.Name} HP: {defender.    HP}. {defender} will act shortly.");
             }
         }
 
