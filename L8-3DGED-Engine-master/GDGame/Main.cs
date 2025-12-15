@@ -864,8 +864,8 @@ namespace GDGame
             var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
 
             string[] members = { "BuldoiseProf", "NoodleProf", "ElytroProf" };
-            float size = 64f;
-            float spacing = 10f;
+            float size = 100f;
+            float spacing = 5f;
 
             for (int i = 0; i < members.Length; i++)
             {
@@ -897,7 +897,7 @@ namespace GDGame
 
             backgroundSprite.Texture = _textureDictionary.Get("TutorialBox"); 
             backgroundSprite.Position = new Vector2(10, 10);
-            backgroundSprite.Size = new Vector2(300, 100);
+            backgroundSprite.Size = new Vector2(300, 150);
 
             uiRenderSystem.Add(backgroundSprite);
             _scene.Add(backgroundGO);
@@ -924,8 +924,8 @@ namespace GDGame
             var backgroundSprite = backgroundGO.AddComponent<UISprite>();
 
             backgroundSprite.Texture = _textureDictionary.Get("ButtonBox");
-            backgroundSprite.Position = new Vector2(10, 200);
-            backgroundSprite.Size = new Vector2(200, 150);
+            backgroundSprite.Position = new Vector2(10, 300);
+            backgroundSprite.Size = new Vector2(200, 300);
 
             uiRenderSystem.Add(backgroundSprite);
             _scene.Add(backgroundGO);
