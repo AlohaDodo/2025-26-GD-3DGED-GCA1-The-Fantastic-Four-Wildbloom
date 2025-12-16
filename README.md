@@ -13,7 +13,7 @@ Right : D
 
 Pause : Esc
 
-For this version of the game, you have a first person camera and you are spawned in the middle of a village. You have different Bloomlings spawned all around you ready for battle. (more to write)
+
 
 # Individual contributions:
 Group contributions to G-CA3 release.
@@ -84,8 +84,15 @@ miraclei (2025) sample_confirm_success02_kofi_by_miraclei (sound effect). Pixaba
 
 Online Sequencer (no date) Online Sequencer. (online) Available at: https://onlinesequencer.net/ (Accessed 14 Dec. 2025).
 
-Picsart (no date) Picsart. Available at: https://picsart.com/ (Accessed 20 September 2025).
+Parents Background Image: https://www.dreamstime.com/stock-illustration-cute-cartoon-family-colorful-stylish-clothes-fun-married-heterosexual-couple-young-happy-cheerful-mom-dad-spend-time-image88592329 (Accessed 09 Dec. 2025).
+
+Parents Image: https://www.dreamstime.com/stock-illustration-cute-cartoon-family-colorful-stylish-clothes-fun-married-heterosexual-couple-young-happy-cheerful-mom-dad-spend-time-image88592329 (Accessed 09 Dec. 2025).
+
+Picsart (no date) Picsart. Available at: https://picsart.com/ (Accessed 20 September 2025)
+.
+Professor Thorn Image: https://www.nicepng.com/ourpic/u2q8y3u2e6t4r5q8_scientist-png-clipart-cartoon-scientist-png/ (Accessed 09 Dec. 2025).
 
 Sketchfab (no date) Village Asset Pack – Houses (Free). (online) Available at: https://sketchfab.com/3d-models/village-asset-pack-houses-free-6505bbf2bd0f4d26aff9f7d257c28e2c (Accessed 9 Dec. 2025).
+
 
 
