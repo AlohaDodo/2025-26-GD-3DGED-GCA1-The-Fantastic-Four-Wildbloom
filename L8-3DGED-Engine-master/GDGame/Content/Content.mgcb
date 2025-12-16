@@ -57,7 +57,7 @@
 /processorParam:Scale=1
 /processorParam:SwapWindingOrder=False
 /processorParam:TextureFormat=Compressed
-/build:Assets/Models/Bloomlings/Bouldoise.fbx
+/build:Assets/Models/Bloomlings/Bouldoise.fbx;Assets/Models/Bloomlings/Bouldoise
 
 #begin Assets/Models/Bloomlings/Donuffin.fbx
 /importer:FbxImporter

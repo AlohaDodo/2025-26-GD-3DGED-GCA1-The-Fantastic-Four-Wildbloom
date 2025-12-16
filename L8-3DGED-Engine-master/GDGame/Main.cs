@@ -27,6 +27,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using Color = Microsoft.Xna.Framework.Color;
+using GDGame.Battle;
 
 namespace GDGame
 {
@@ -773,14 +774,14 @@ namespace GDGame
             var relativeFilePathAndName = "assets/data/single_model_spawn.json";
             List<ModelSpawnData> mList = JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName);
 
-            //load a single model
-            foreach (var d in mList)
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            ////load a single model
+            //foreach (var d in mList)
+            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
-            relativeFilePathAndName = "assets/data/multi_model_spawn.json";
-            //load multiple models
-            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            //relativeFilePathAndName = "assets/data/multi_model_spawn.json";
+            ////load multiple models
+            //foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
             relativeFilePathAndName = "assets/data/multi_environment_spawn.json";
             //load multiple models
@@ -796,10 +797,23 @@ namespace GDGame
         private void InitializeUI()
         {
             InitializeUIReticleRenderer();
-            InitializeUITutorialBox();
-            InitializeUIButtonBox();
             InitializePartyUI();
             InitializeSubtitles();
+            InitializeUIButtonBox();
+            InitializeUITutorialBox();
+
+
+            // Setup simple turn-based battle manager and pass subtitle UIText for status messages.
+            var subtitleGO = _scene.Find((GameObject go) => go.Name.Equals("SubtitleText"));
+            var subtitleText = subtitleGO?.GetComponent<UIText>();
+
+            // Pass scene, model and texture dictionaries and graphics device so BattleManager can spawn assets.
+            _battleManager = new BattleManager(
+                _scene,
+                _modelDictionary,
+                _textureDictionary,
+                GraphicsDevice,
+                subtitleText);
         }
 
         private void InitializeBattleUI()
@@ -986,6 +1000,10 @@ namespace GDGame
         protected override void Update(GameTime gameTime)
         {
             Time.Update(gameTime);
+
+            // Update battle manager so player can press "2" to attack and AI can respond.
+            _battleManager?.Update(gameTime);
+
             base.Update(gameTime); // SceneManager updates scenes internally
 
             //checking if the cutscenes images are working
