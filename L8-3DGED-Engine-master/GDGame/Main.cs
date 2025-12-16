@@ -58,6 +58,7 @@ namespace GDGame
         private GameObject _parentsCutSceneTexture;
         private GameObject _cutsceneImageGo;
         private UISprite _cutsceneSprite;
+        private BattleManager _battleManager;
 
         #endregion Core Fields (Common to all games)
 
