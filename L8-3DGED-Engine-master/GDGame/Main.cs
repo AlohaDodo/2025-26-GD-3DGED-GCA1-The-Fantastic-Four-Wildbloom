@@ -243,7 +243,7 @@ namespace GDGame
             {
                 _sceneManager.Paused = false;
                 // Play BGM immediately when game starts
-                EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
+                EngineContext.Instance.Events.Publish(new PlayMusicEvent("NewVillage", 0.3f, 0.7f));
                 _menuManager.HideMenus();
             };
 
@@ -277,7 +277,10 @@ namespace GDGame
             System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode.PerMonitorV2);
 
             // Set preferred resolution
-            GDEngine.Core.ScreenResolution.SetResolution(_graphics, resolution);
+            //X = 1920   width in pixels
+            //Y = 1080   height in pixels
+            //telling the graphics device what size  game window should be
+            GDEngine.Core.ScreenResolution.SetResolution(_graphics, new Integer2(1920, 1080));
 
             // Center on primary display (set to index of the preferred monitor)
             WindowUtility.CenterOnMonitor(this, 1);
