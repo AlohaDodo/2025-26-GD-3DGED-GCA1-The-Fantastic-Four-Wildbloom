@@ -1,6 +1,9 @@
 # Wildbloom
 
-Welcome to Wildbloom made by The Fantastic Four (Dorota Kaminska, Dorian Burak, Thomas Oderinde, Vidhaeha Jayasinghe)
+Welcome to Wildbloom made by The Fantastic Four (Dorota Kaminska, Dorian Burak, Thomas Oderinde, Vidhaeha Jayasinghe).
+Wildbloom is a creature catching game inspired by Pokemon where you explore the map and encounter wild creatures by the name of Bloomlings. Exploring the map, you will go through many locations and in those, you will fine Bloomlings. Bloomlings have different types, and they can be either your companions that will travel with you or enemies that you will fight to make progress.
+
+When you enter the game, you will find yourself in a village, around you, you will see 4 different bloomlings. You can walk up to the Noodlord that will be next to the houses, and pressing 2, you will be able to battle him. Once his health drops to 0, Noodlord will dissapear.
 
 ### Controls
 Foward : W 
@@ -12,6 +15,12 @@ Left : A
 Right : D
 
 Pause : Esc
+
+Parents : P
+
+Professor Thorn : T
+
+Battle : 2
 
 
 ### Youtube link to screencast
@@ -95,6 +104,7 @@ Picsart (no date) Picsart. Available at: https://picsart.com/ (Accessed 20 Septe
 Professor Thorn Image: https://www.nicepng.com/ourpic/u2q8y3u2e6t4r5q8_scientist-png-clipart-cartoon-scientist-png/ (Accessed 09 Dec. 2025).
 
 Sketchfab (no date) Village Asset Pack – Houses (Free). (online) Available at: https://sketchfab.com/3d-models/village-asset-pack-houses-free-6505bbf2bd0f4d26aff9f7d257c28e2c (Accessed 9 Dec. 2025).
+
 
 
 
