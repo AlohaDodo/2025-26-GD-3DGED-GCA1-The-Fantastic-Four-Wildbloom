@@ -55,8 +55,8 @@ namespace GDGame.Battle
             _playersTurn = true;
             _prevKeyboard = Keyboard.GetState();
 
-            SpawnCharacter(_player, new Vector3(-5f, -1f, 0f), GetPreferredScale(_player.Name));
-            SpawnCharacter(_ai, new Vector3(5f, 4f, 0f), GetPreferredScale(_ai.Name));
+            SpawnCharacter(_player, new Vector3(26f, 0f, -30f), GetPreferredScale(_player.Name));
+            SpawnCharacter(_ai, new Vector3(30f, 1f, 30f), GetPreferredScale(_ai.Name));
 
             SetStatus($"{_player.Name} vs {_ai.Name} — {_player.Name} to act. Press '2' to attack.");
         }
@@ -70,9 +70,9 @@ namespace GDGame.Battle
             switch (assetName.Trim())
             {
                 case "Bouldoise":
-                    return 3.0f;
+                    return 1.2f;
                 case "Noodlord":
-                    return 3.0f;
+                    return 1.3f;
                 default:
                     return 1.25f;
             }

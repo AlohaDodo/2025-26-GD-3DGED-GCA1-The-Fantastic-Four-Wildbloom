@@ -775,14 +775,14 @@ namespace GDGame
             var relativeFilePathAndName = "assets/data/single_model_spawn.json";
             List<ModelSpawnData> mList = JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName);
 
-            ////load a single model
-            //foreach (var d in mList)
-            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            //load a single model
+            foreach (var d in mList)
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
-            //relativeFilePathAndName = "assets/data/multi_model_spawn.json";
-            ////load multiple models
-            //foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            relativeFilePathAndName = "assets/data/multi_model_spawn.json";
+            //load multiple models
+            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
             relativeFilePathAndName = "assets/data/multi_environment_spawn.json";
             //load multiple models

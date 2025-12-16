@@ -45,45 +45,45 @@
             "modelName": "Donuffin",
             "objectName": "spawn-3"
         },
-        {
-          "position": [
-            30,
-            1,
-            30
-          ],
-            "rotationDegrees": [
-                0,
-                270,
-                0
-            ],
-            "scale": [
-                1.3,
-                1.3,
-                1.3
-            ],
-            "textureName": "ground_grass",
-            "modelName": "Noodlord",
-            "objectName": "spawn-4"
-        },
-        {
-            "position": [
-                26,
-                0,
-                -30
-            ],
-            "rotationDegrees": [
-                0,
-                -90,
-                0
-            ],
-            "scale": [
-                1.2,
-                1.2,
-                1.2
-            ],
-            "textureName": "BouldoiseTXT",
-            "modelName": "Bouldoise",
-            "objectName": "spawn-5"
-        }
+        //{
+        //  "position": [
+        //    30,
+        //    1,
+        //    30
+        //  ],
+        //    "rotationDegrees": [
+        //        0,
+        //        270,
+        //        0
+        //    ],
+        //    "scale": [
+        //        1.3,
+        //        1.3,
+        //        1.3
+        //    ],
+        //    "textureName": "ground_grass",
+        //    "modelName": "Noodlord",
+        //    "objectName": "spawn-4"
+        //},
+        //{
+        //  "position": [
+        //    26,
+        //    0,
+        //    -30
+        //  ],
+        //    "rotationDegrees": [
+        //        0,
+        //        -90,
+        //        0
+        //    ],
+        //    "scale": [
+        //        1.2,
+        //        1.2,
+        //        1.2
+        //    ],
+        //    "textureName": "BouldoiseTXT",
+        //    "modelName": "Bouldoise",
+        //    "objectName": "spawn-5"
+        //}
     ]
 }
