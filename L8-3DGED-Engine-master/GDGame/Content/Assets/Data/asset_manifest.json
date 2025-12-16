@@ -228,6 +228,10 @@
       "contentPath": "assets/sounds/BGM/BGM-Village"
     },
     {
+      "name": "NewVillage",
+      "contentPath": "assets/sounds/BGM/NewVillage"
+    },
+    {
       "name": "explosion1",
       "contentPath": "assets/sounds/Explosion 1"
     },
@@ -256,18 +260,22 @@
       "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Movement_Open_1"
     },
     {
-        "name": "SFX_UI_Click_Designed_Pop_Negative_Close_1",
-        "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Negative_Close_1"
+      "name": "SFX_UI_Click_Designed_Pop_Negative_Close_1",
+      "contentPath": "assets/sounds/ui/SFX_UI_Click_Designed_Pop_Negative_Close_1"
     },
     {
-        "name": "VillageAmbience",
-        "contentPath": "assets/sounds/BGM/Village"
+      "Name": "ui_ClickSound",
+      "ContentPath": "assets/sounds/ui/ui_ClickSound"
+    }, 
+    {
+      "name": "VillageAmbience",
+      "contentPath": "assets/sounds/BGM/Village"
     }
   ],
-    "effects": [
-        {
-            "name": "ui_test_effect",
-            "contentPath": "assets/effects/ui/ui_test_effect"
-        }
-    ]
+  "effects": [
+    {
+      "name": "ui_test_effect",
+      "contentPath": "assets/effects/ui/ui_test_effect"
+    }
+  ]
 }
