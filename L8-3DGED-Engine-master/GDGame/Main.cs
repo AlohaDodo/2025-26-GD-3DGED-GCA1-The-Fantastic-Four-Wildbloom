@@ -27,13 +27,14 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using Color = Microsoft.Xna.Framework.Color;
-
+using GDGame.Battle;
 
 namespace GDGame
 {
     public class Main : Game
     {
-        #region Core Fields (Common to all games)     
+        #region Core Fields (Common to all games)
+
         private GraphicsDeviceManager _graphics;
         private ContentDictionary<Texture2D> _textureDictionary;
         private ContentDictionary<Model> _modelDictionary;
@@ -48,16 +49,21 @@ namespace GDGame
 
         //Menu feilds
         private LayerMask _collisionDebugMask = LayerMask.All;
+
         private MenuManager _menuManager;
 
         //Cutscene fields
         private GameObject _thornCutSceneTexture;
+
         private GameObject _parentsCutSceneTexture;
         private GameObject _cutsceneImageGo;
         private UISprite _cutsceneSprite;
-        #endregion
+        private BattleManager _battleManager;
 
-        #region Core Methods (Common to all games)     
+        #endregion Core Fields (Common to all games)
+
+        #region Core Methods (Common to all games)
+
         public Main()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -67,7 +73,6 @@ namespace GDGame
 
         protected override void Initialize()
         {
-
             #region Core
 
             // Give the game a name
@@ -112,7 +117,6 @@ namespace GDGame
             //game manager, camera changer, FSM, AI
             //InitializeManagers();
 
-
             DemoLoadFromJSON();
             // Setup world
             int scale = 100;
@@ -154,7 +158,6 @@ namespace GDGame
                 ground.Transform.RotateEulerBy(new Vector3(MathHelper.ToRadians(-90), 0, 0));
                 ground.Transform.ScaleTo(Vector3.One);
 
-
                 // Camera, UI, Menu, Physics, Rendering etc.
                 InitializeSystems();
                 // All cameras we want in the game are loaded now and one set as active
@@ -179,7 +182,7 @@ namespace GDGame
             // Setup pause handling to show menu
             SetPauseShowMenu();
 
-            #endregion
+            #endregion Core
 
             base.Initialize();
         }
@@ -200,9 +203,6 @@ namespace GDGame
                 _sceneManager.ActiveScene.GetSystem<PhysicsSystem>()?.SetPaused(paused);
                 _sceneManager.ActiveScene.GetSystem<PhysicsDebugSystem>()?.SetPaused(paused);
                 _sceneManager.ActiveScene.GetSystem<GameStateSystem>()?.SetPaused(paused);
-
-                
-
             });
         }
 
@@ -241,15 +241,16 @@ namespace GDGame
             // Subscribe to high-level events
             _menuManager.PlayRequested += () =>
             {
+           
                 _sceneManager.Paused = false;
                 // Play BGM immediately when game starts
                 EngineContext.Instance.Events.Publish(new PlayMusicEvent("NewVillage", 0.3f, 0.7f));
                 _menuManager.HideMenus();
             };
 
-
             _menuManager.ExitRequested += () =>
             {
+
                 Exit();
             };
 
@@ -267,8 +268,6 @@ namespace GDGame
                 // Forward to audio manager
                 System.Diagnostics.Debug.WriteLine("SfxVolumeChanged");
             };
-
-
         }
 
         private void InitializeGraphics(Integer2 resolution)
@@ -329,7 +328,8 @@ namespace GDGame
 
         private void InitializeEffects()
         {
-            #region Unlit Textured BasicEffect 
+            #region Unlit Textured BasicEffect
+
             var unlitBasicEffect = new BasicEffect(_graphics.GraphicsDevice)
             {
                 TextureEnabled = true,
@@ -346,9 +346,10 @@ namespace GDGame
             _matBasicUnlitGround.StateBlock = RenderStates.Opaque3D();      // depth on, cull CCW
             _matBasicUnlitGround.SamplerState = SamplerState.AnisotropicWrap;   // wrap texture based on UV values
 
-            #endregion
+            #endregion Unlit Textured BasicEffect
 
-            #region Lit Textured BasicEffect 
+            #region Lit Textured BasicEffect
+
             var litBasicEffect = new BasicEffect(_graphics.GraphicsDevice)
             {
                 TextureEnabled = true,
@@ -359,16 +360,18 @@ namespace GDGame
             litBasicEffect.EnableDefaultLighting();
             _matBasicLit = new Material(litBasicEffect);
             _matBasicLit.StateBlock = RenderStates.Opaque3D();
-            #endregion
+
+            #endregion Lit Textured BasicEffect
 
             #region Alpha-test for foliage/billboards
+
             var alphaFx = new AlphaTestEffect(GraphicsDevice)
             {
                 VertexColorEnabled = false
             };
             _matAlphaCutout = new Material(alphaFx);
 
-            // Depth test/write on; no blending (cutout happens in the effect). 
+            // Depth test/write on; no blending (cutout happens in the effect).
             // Make it two-sided so the quad is visible from both sides.
             _matAlphaCutout.StateBlock = RenderStates.Cutout3D()
                 .WithRaster(new RasterizerState { CullMode = CullMode.None });
@@ -377,7 +380,7 @@ namespace GDGame
             // (Use LinearWrap if the foliage textures tile.)
             _matAlphaCutout.SamplerState = SamplerState.LinearClamp;
 
-            #endregion
+            #endregion Alpha-test for foliage/billboards
         }
 
         private void InitializeScene()
@@ -388,23 +391,21 @@ namespace GDGame
 
         private void InitializeSystems()
         {
-
             var activeScene = _sceneManager.ActiveScene;
             InitializePhysicsSystem();
             InitializePhysicsDebugSystem(false);
-            InitializeEventSystem();  //propagate events  
+            InitializeEventSystem();  //propagate events
             InitializeInputSystem();  //input
             InitializeCameraAndRenderSystems(); //update cameras, draw renderable game objects, draw ui and menu
             _sceneManager.ActiveScene.Add(new UIEventSystem()); //ui events
             InitializeAudioSystem();
             InitializeOrchestrationSystem(false); //show debugger
-            InitializeImpulseSystem();    //camera shake, audio duck volumes etc   
+            InitializeImpulseSystem();    //camera shake, audio duck volumes etc
             InitializeGameStateSystem();   //manage and track game state
                                            //  InitializeNavMeshSystem();
 
             // Play BGM immediately when game starts
-           // EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
-
+            // EngineContext.Instance.Events.Publish(new PlayMusicEvent("BGM-Village", 0.7f, 1.5f));
         }
 
         private void InitializeGameStateSystem()
@@ -453,9 +454,7 @@ namespace GDGame
 
                 _sceneManager.ActiveScene.Add(debugGO);
             }
-
         }
-
 
         private void InitializeAudioSystem()
         {
@@ -474,7 +473,6 @@ namespace GDGame
             //physicsDebugRenderer.KinematicColor = Color.Blue;    // Animated objects
             //physicsDebugRenderer.DynamicColor = Color.Yellow;    // Physics-driven objects
             //physicsDebugRenderer.TriggerColor = Color.Red;       // Trigger volumes
-
         }
 
         private void InitializePhysicsSystem()
@@ -514,7 +512,7 @@ namespace GDGame
             bindings.EnableKeyRepeat = true;    // hold-to-repeat
             bindings.KeyRepeatMs = 300;         // repeat rate in ms
 
-            // Create the input system 
+            // Create the input system
             var inputSystem = new InputSystem();
 
             //register all the devices
@@ -535,10 +533,11 @@ namespace GDGame
             var position = new Vector3(0, 5, 25);
 
             #region First-Person Camera
+
             //camera GO
             cameraGO = new GameObject(AppData.CAMERA_NAME_FIRST_PERSON);
 
-            //set position 
+            //set position
             cameraGO.Transform.TranslateTo(position);
 
             //add camera component to the GO
@@ -554,9 +553,11 @@ namespace GDGame
 
             //DO NOT CHANGE - First-person is default active camera
             _scene.SetActiveCamera(AppData.CAMERA_NAME_FIRST_PERSON);
-            #endregion
+
+            #endregion First-Person Camera
 
             #region Thorn Cutscene Camera
+
             //camera GO
             cameraThorn = new GameObject(AppData.CAMERA_THORN_CUTSCENE);
 
@@ -569,9 +570,11 @@ namespace GDGame
             //feed off whatever screen dimensions you set InitializeGraphics
             camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
             _scene.Add(cameraThorn);
-            #endregion
+
+            #endregion Thorn Cutscene Camera
 
             #region Parent cutscene camera
+
             //camera GO
             cameraParents = new GameObject("CameraParent_Cutscene");
 
@@ -584,13 +587,14 @@ namespace GDGame
             //feed off whatever screen dimensions you set InitializeGraphics
             camera.AspectRatio = (float)_graphics.PreferredBackBufferWidth / _graphics.PreferredBackBufferHeight;
             _scene.Add(cameraParents);
-            #endregion 
+            #endregion Parent cutscene camera
+
         }
 
         private void CutsceneImage()
         {
             var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
-            
+
             // Thorn Cutscene Image
             _thornCutSceneTexture = new GameObject("ThornCutsceneImage");
             var thornSprite = _thornCutSceneTexture.AddComponent<UISprite>();
@@ -694,7 +698,6 @@ namespace GDGame
             //set parent to allow rotation
             gameObject.Transform.SetParent(skyParent.Transform);
 
-
             // right
             gameObject = new GameObject("right");
             gameObject.Transform.ScaleTo(new Vector3(scale, scale, 1));
@@ -739,7 +742,6 @@ namespace GDGame
 
             //set parent to allow rotation
             gameObject.Transform.SetParent(skyParent.Transform);
-
         }
 
         private GameObject InitializeModel(Vector3 position,
@@ -773,14 +775,14 @@ namespace GDGame
             var relativeFilePathAndName = "assets/data/single_model_spawn.json";
             List<ModelSpawnData> mList = JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName);
 
-            //load a single model
-            foreach (var d in mList)
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            ////load a single model
+            //foreach (var d in mList)
+            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
-            relativeFilePathAndName = "assets/data/multi_model_spawn.json";
-            //load multiple models
-            foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
-                InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
+            //relativeFilePathAndName = "assets/data/multi_model_spawn.json";
+            ////load multiple models
+            //foreach (var d in JSONSerializationUtility.LoadData<ModelSpawnData>(Content, relativeFilePathAndName))
+            //    InitializeModel(d.Position, d.RotationDegrees, d.Scale, d.TextureName, d.ModelName, d.ObjectName);
 
             relativeFilePathAndName = "assets/data/multi_environment_spawn.json";
             //load multiple models
@@ -796,12 +798,24 @@ namespace GDGame
         private void InitializeUI()
         {
             InitializeUIReticleRenderer();
-            InitializeUITutorialBox();
-            InitializeUIButtonBox();
             InitializePartyUI();
             InitializeSubtitles();
-        }
+            InitializeUIButtonBox();
+            InitializeUITutorialBox();
 
+
+            // Setup simple turn-based battle manager and pass subtitle UIText for status messages.
+            var subtitleGO = _scene.Find((GameObject go) => go.Name.Equals("SubtitleText"));
+            var subtitleText = subtitleGO?.GetComponent<UIText>();
+
+            // Pass scene, model and texture dictionaries and graphics device so BattleManager can spawn assets.
+            _battleManager = new BattleManager(
+                _scene,
+                _modelDictionary,
+                _textureDictionary,
+                GraphicsDevice,
+                subtitleText);
+        }
 
         private void InitializeBattleUI()
         {
@@ -811,10 +825,7 @@ namespace GDGame
             //InitializeActionMenuUI();
             //InitializeBattleStateUI();
             //InitializeVisualSoundUI();
-
         }
-
-        
 
         private void InitializeSubtitles()
         {
@@ -858,14 +869,13 @@ namespace GDGame
             _scene.Add(textGO);
         }
 
-
         private void InitializePartyUI()
         {
             var uiRender = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
 
             string[] members = { "BuldoiseProf", "NoodleProf", "ElytroProf" };
-            float size = 64f;
-            float spacing = 10f;
+            float size = 100f;
+            float spacing = 5f;
 
             for (int i = 0; i < members.Length; i++)
             {
@@ -875,7 +885,7 @@ namespace GDGame
                 sprite.Texture = _textureDictionary.Get(members[i]);
                 sprite.Size = new Vector2(size, size);
 
-                // right side middle  
+                // right side middle
                 sprite.Position = new Vector2(
                     _graphics.PreferredBackBufferWidth - (size + 20),
                     _graphics.PreferredBackBufferHeight / 2 + (i * (size + spacing))
@@ -886,7 +896,6 @@ namespace GDGame
             }
         }
 
-
         private void InitializeUITutorialBox()
         {
             var uiRenderSystem = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
@@ -895,9 +904,9 @@ namespace GDGame
             var backgroundGO = new GameObject("UIBackgroundBox");
             var backgroundSprite = backgroundGO.AddComponent<UISprite>();
 
-            backgroundSprite.Texture = _textureDictionary.Get("TutorialBox"); 
+            backgroundSprite.Texture = _textureDictionary.Get("TutorialBox");
             backgroundSprite.Position = new Vector2(10, 10);
-            backgroundSprite.Size = new Vector2(300, 100);
+            backgroundSprite.Size = new Vector2(300, 150);
 
             uiRenderSystem.Add(backgroundSprite);
             _scene.Add(backgroundGO);
@@ -915,6 +924,7 @@ namespace GDGame
             uiRenderSystem.Add(textComponent);
             _scene.Add(textGO);
         }
+
         private void InitializeUIButtonBox()
         {
             var uiRenderSystem = _sceneManager.ActiveScene.GetSystem<UIRenderSystem>();
@@ -924,8 +934,8 @@ namespace GDGame
             var backgroundSprite = backgroundGO.AddComponent<UISprite>();
 
             backgroundSprite.Texture = _textureDictionary.Get("ButtonBox");
-            backgroundSprite.Position = new Vector2(10, 200);
-            backgroundSprite.Size = new Vector2(200, 150);
+            backgroundSprite.Position = new Vector2(10, 300);
+            backgroundSprite.Size = new Vector2(200, 300);
 
             uiRenderSystem.Add(backgroundSprite);
             _scene.Add(backgroundGO);
@@ -943,7 +953,6 @@ namespace GDGame
             uiRenderSystem.Add(textComponent);
             _scene.Add(textGO);
         }
-
 
         private void InitializeUIReticleRenderer()
         {
@@ -989,10 +998,13 @@ namespace GDGame
             IsMouseVisible = false;
         }
 
-
         protected override void Update(GameTime gameTime)
         {
             Time.Update(gameTime);
+
+            // Update battle manager so player can press "2" to attack and AI can respond.
+            _battleManager?.Update(gameTime);
+
             base.Update(gameTime); // SceneManager updates scenes internally
 
             //checking if the cutscenes images are working
@@ -1086,6 +1098,7 @@ namespace GDGame
             // Always call base.Dispose
             base.Dispose(disposing);
         }
-        #endregion    }
+
+        #endregion Core Methods (Common to all games)
     }
 }

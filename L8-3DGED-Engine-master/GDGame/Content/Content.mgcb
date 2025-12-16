@@ -57,7 +57,7 @@
 /processorParam:Scale=1
 /processorParam:SwapWindingOrder=False
 /processorParam:TextureFormat=Compressed
-/build:Assets/Models/Bloomlings/Bouldoise.fbx
+/build:Assets/Models/Bloomlings/Bouldoise.fbx;Assets/Models/Bloomlings/Bouldoise
 
 #begin Assets/Models/Bloomlings/Donuffin.fbx
 /importer:FbxImporter
@@ -447,6 +447,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Assets/Sounds/UI/SFX_UI_Click_Designed_Pop_Negative_Close_1.wav
+
+#begin Assets/Sounds/UI/ui_ClickSound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Assets/Sounds/UI/ui_ClickSound.mp3
 
 #begin Assets/Textures/Architecture/Walls/backwall.jpg
 /importer:TextureImporter
