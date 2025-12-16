@@ -55,7 +55,7 @@ namespace GDGame.Battle
             _playersTurn = true;
             _prevKeyboard = Keyboard.GetState();
 
-            SpawnCharacter(_player, new Vector3(26f, 0f, -30f), GetPreferredScale(_player.Name));
+            SpawnCharacter(_player, new Vector3(26f, -0.7f, -30f), GetPreferredScale(_player.Name));
             SpawnCharacter(_ai, new Vector3(30f, 1f, 30f), GetPreferredScale(_ai.Name));
 
             SetStatus($"{_player.Name} vs {_ai.Name} — {_player.Name} to act. Press '2' to attack.");
