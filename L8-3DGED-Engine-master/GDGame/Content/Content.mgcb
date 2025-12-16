@@ -13,44 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ../../../../../../OneDrive - Dundalk Institute of Technology/Year 3/Universal Design Project/Models/Models fbx/Bloomlings/Bouldoise.fbx
-/importer:FbxImporter
-/processor:ModelProcessor
-/processorParam:ColorKeyColor=0,0,0,0
-/processorParam:ColorKeyEnabled=True
-/processorParam:DefaultEffect=BasicEffect
-/processorParam:GenerateMipmaps=True
-/processorParam:GenerateTangentFrames=False
-/processorParam:PremultiplyTextureAlpha=True
-/processorParam:PremultiplyVertexColors=True
-/processorParam:ResizeTexturesToPowerOfTwo=False
-/processorParam:RotationX=0
-/processorParam:RotationY=0
-/processorParam:RotationZ=0
-/processorParam:Scale=1
-/processorParam:SwapWindingOrder=False
-/processorParam:TextureFormat=Compressed
-/build:../../../../../../OneDrive - Dundalk Institute of Technology/Year 3/Universal Design Project/Models/Models fbx/Bloomlings/Bouldoise.fbx;Assets/Models/Bloomlings/Bouldoise.fbx
-
-#begin ../../../../../../OneDrive - Dundalk Institute of Technology/Year 3/Universal Design Project/Models/Models fbx/Bloomlings/Bouldoise.fbx
-/importer:FbxImporter
-/processor:ModelProcessor
-/processorParam:ColorKeyColor=0,0,0,0
-/processorParam:ColorKeyEnabled=True
-/processorParam:DefaultEffect=BasicEffect
-/processorParam:GenerateMipmaps=True
-/processorParam:GenerateTangentFrames=False
-/processorParam:PremultiplyTextureAlpha=True
-/processorParam:PremultiplyVertexColors=True
-/processorParam:ResizeTexturesToPowerOfTwo=False
-/processorParam:RotationX=0
-/processorParam:RotationY=0
-/processorParam:RotationZ=0
-/processorParam:Scale=1
-/processorParam:SwapWindingOrder=False
-/processorParam:TextureFormat=Compressed
-/build:../../../../../../OneDrive - Dundalk Institute of Technology/Year 3/Universal Design Project/Models/Models fbx/Bloomlings/Bouldoise.fbx;Assets/Models/Bloomlings/Bouldoise.fbx
-
 #begin Assets/Effects/UI/ui_test_effect.fx
 /importer:EffectImporter
 /processor:EffectProcessor
@@ -77,6 +39,25 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Assets/Fonts/uiReticleText.spritefont
+
+#begin Assets/Models/Bloomlings/Bouldoise.fbx
+/importer:FbxImporter
+/processor:ModelProcessor
+/processorParam:ColorKeyColor=0,0,0,0
+/processorParam:ColorKeyEnabled=True
+/processorParam:DefaultEffect=BasicEffect
+/processorParam:GenerateMipmaps=True
+/processorParam:GenerateTangentFrames=False
+/processorParam:PremultiplyTextureAlpha=True
+/processorParam:PremultiplyVertexColors=True
+/processorParam:ResizeTexturesToPowerOfTwo=False
+/processorParam:RotationX=0
+/processorParam:RotationY=0
+/processorParam:RotationZ=0
+/processorParam:Scale=1
+/processorParam:SwapWindingOrder=False
+/processorParam:TextureFormat=Compressed
+/build:Assets/Models/Bloomlings/Bouldoise.fbx;Assets/Models/Bloomlings/Bouldoise
 
 #begin Assets/Models/Bloomlings/Donuffin.fbx
 /importer:FbxImporter
