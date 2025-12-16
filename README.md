@@ -76,5 +76,16 @@ https://www.figma.com/design/V58Q6ypSFf2yVi77RYNn2b/WildBloom-UI?node-id=4-
 
 
 # References:
+Figma (no date) Figma design. (online) Available at: https://www.figma.com/ (Accessed 25 Nov. 2025).
+
+Krita Foundation (2024) Krita (Version 5.2) (computer software). Available at: https://krita.org/ (Accessed: 20 Sep 2025).
+
+miraclei (2025) sample_confirm_success02_kofi_by_miraclei (sound effect). Pixabay. Available at: https://pixabay.com/sound-effects/sample-confirm-success02-kofi-by-miraclei-360154/ (Accessed: 14 Dec. 2025).
+
+Online Sequencer (no date) Online Sequencer. (online) Available at: https://onlinesequencer.net/ (Accessed 14 Dec. 2025).
+
+Picsart (no date) Picsart. Available at: https://picsart.com/ (Accessed 20 September 2025).
+
+Sketchfab (no date) Village Asset Pack – Houses (Free). (online) Available at: https://sketchfab.com/3d-models/village-asset-pack-houses-free-6505bbf2bd0f4d26aff9f7d257c28e2c (Accessed 9 Dec. 2025).
 
 
